@@ -21,6 +21,18 @@ class ActionProvider {
         this.updateChatState(userMessage);
         this.updateChatbotState(message);
       };
+
+    getRandomMeal = () => {
+        const userMessage = createClientMessage("Surprise me!");
+        const message = this.createChatBotMessage("Okay.. Here is a random meal for you!",
+        {
+            widget: "menuListAPI",
+        }
+        );
+
+        this.updateChatState(userMessage);
+        this.updateChatbotState(message);
+      };
           
 
     greet = () => {

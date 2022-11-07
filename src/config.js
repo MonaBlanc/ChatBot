@@ -1,6 +1,7 @@
 import { createChatBotMessage } from 'react-chatbot-kit';
 import OpeningOptions from './components/Opening/OpeningOptions';
 import LinkList from "./components/LinkList/LinkList";
+import RandomList from './components/RandomMeal/RandomList';
 
 const config = { 
   botName: "ChiefBot",
@@ -15,12 +16,12 @@ const config = {
        widgetFunc: (props) => <OpeningOptions {...props} />,
     },
     {
-      widgetName: "HideOpeningOptions",
-     widgetFunc: (props) => <div OpeningOptions={props.shouldHide? 'hidden' : undefined}/>,
+      widgetName: "menuListAPI",
+      widgetFunc: () => <RandomList />,
     },
     {
         widgetName: "mealAPI",
-        widgetFunc: (props) => <LinkList {...props} />,
+        widgetFunc: (props) => <LinkList {...props}/>,
         props: {
           options: [
             {
