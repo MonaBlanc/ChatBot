@@ -2,13 +2,18 @@ import React from "react";
 import "./RandomList.css";
 
 const RandomList = () => {
+    let item = [];
         fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
             .then(res => res.json())
             .then(res => {
-                createMeal(res.meals[0]); });
+                //createMeal(res.meals[0]);
+                // console.log(res.meals[0]);
+                item.push = res.meals[0];
+                //console.log(item);
+             });
 
-
-                const createMeal = (item) => {
+             console.log(item);
+                // const createMeal = (item) => {
                     const ingredients = [];
                     // Get all ingredients from the object. Up to 20
                     for(let i=1; i<=20; i++) {
@@ -19,25 +24,25 @@ const RandomList = () => {
                             break;
                         }
                     }
-                    
+                    console.log(item);
                         
                     return(
                         <>
                             {
-                                <div class="row">
-                                    <div class="columns five">
-                                        <img src="${item.strMealThumb}" alt="Meal Image"/> 
-                                        ${item.strCategory ? `<p><strong>Category:</strong> ${item.strCategory}</p>` : ''}
-                                        ${item.strArea ? `<p><strong>Area:</strong> ${item.strArea}</p>` : ''}
-                                        ${item.strTags ? `<p><strong>Tags:</strong> ${item.strTags.split(',').join(', ')}</p>` : ''}
+                                <div className="row">
+                                    <div className="columns five">
+                                        <img src={item.strMealThumb} alt="Meal Image"/> 
+                                        {item.strCategory ? `<p><strong>Category:</strong> {item.strCategory}</p>` : ''}
+                                        {item.strArea ? `<p><strong>Area:</strong> ${item.strArea}</p>` : ''}
+                                        {item.strTags ? `<p><strong>Tags:</strong> ${item.strTags.split(',').join(', ')}</p>` : ''}
                                         <h5>Ingredients:</h5>
                                         <ul>
-                                            ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+                                            {ingredients.map(ingredient => `<li>{ingredient}</li>`).join('')}
                                         </ul>
                                     </div>
-                                    <div class="columns seven">
-                                        <h4>${item.strMeal}</h4>
-                                        <p>${item.strInstructions}</p>
+                                    <div className="columns seven">
+                                        <h4>{item.strMeal}</h4>
+                                        <p>{item.strInstructions}</p>
                                     </div>
                                 </div>
                             }
@@ -45,7 +50,7 @@ const RandomList = () => {
                         </>
                     
                     );
-                }
+                //}
                         
 
                     
@@ -79,7 +84,7 @@ const RandomList = () => {
                 </div>
             </div>;*/
 
-return <div className="random-list-container">{createMeal}</div>;
+// return <div className="random-list-container">{createMeal()}</div>;
                 /* <div className="content">
                     
                     <img src={item.strMealThumb} alt="" />

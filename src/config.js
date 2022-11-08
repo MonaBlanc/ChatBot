@@ -17,7 +17,7 @@ const config = {
     },
     {
       widgetName: "menuListAPI",
-      widgetFunc: () => <RandomList />,
+      widgetFunc: (props) => <RandomList {...props}/>,
     },
     {
         widgetName: "mealAPI",
