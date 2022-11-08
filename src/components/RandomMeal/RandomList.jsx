@@ -4,7 +4,7 @@ import "./RandomList.css";
 import axios from 'axios';
 
 const RandomList = () => {
-    const [meal, setMeal] = useState();
+    const [meal, setMeal] = useState({});
     useEffect(() => {
         getMeals();
     }, []);
