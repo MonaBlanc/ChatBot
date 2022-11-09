@@ -28,7 +28,7 @@ const RandomList = () => {
     return (
         <>
             {
-                <div className="row">
+                <div className="infos row">
                     <div className="columns five">
                         <img src={meal.strMealThumb} alt="Meal Image" />
                         {meal.strCategory ? <p><strong>Category:</strong> {meal.strCategory}</p> : ''}
