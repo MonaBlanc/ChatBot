@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './container/store'
+import './assets/font/quicksand/ttf/quicksand-latin-700-normal.ttf';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
