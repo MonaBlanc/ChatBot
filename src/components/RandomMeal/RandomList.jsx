@@ -37,7 +37,7 @@ const RandomList = () => {
                         {meal.strTags ? <p><strong>Tags:</strong> {meal.strTags.split(',').join(', ')}</p> : ''}
                         <h5>Ingredients:</h5>
                         <ul>
-                            {ingredients.map(ingredient => <li>{ingredient}</li>)}
+                            {ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}
                         </ul>
                     </div>
                     <div className="columns seven">
