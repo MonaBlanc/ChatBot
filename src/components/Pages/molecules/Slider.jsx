@@ -16,7 +16,7 @@ export default function Slider() {
     console.log(window.screen.width);
     const images = importAll(require.context('../../../assets/img/', false, /\.jpeg$/));
     anime({
-        targets: '.dish',
+        targets: '',
         translateX: 1440,
         duration: 4000,
         loop: true,
@@ -24,7 +24,7 @@ export default function Slider() {
         autoplay: true,
     });
     return (
-        <div id='slider' className='flex flex-row justify-evenly'>
+        <div id='slider' className='flex flex-row justify-evenly mt-8 mb-12'>
             {Object.keys(images).map((key) =>
                 <img className='dish rounded-full h-32 w-32' src={images[key]} alt={key} />
             )}
