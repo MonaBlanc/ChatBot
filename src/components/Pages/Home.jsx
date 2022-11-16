@@ -86,7 +86,7 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <img src={require('../../assets/img/bot.png')} alt="bot" className="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12" />
+                                <img src={require('../../assets/img/bot.png')} alt="bot" className="w-1/4 h-3/4 mx-auto md:mt-0 mt-12" />
                             </div>
                         </div>
                     </section>
