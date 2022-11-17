@@ -20,6 +20,7 @@ Using [Jest](https://jestjs.io/) we can do unit test and then calculate coverage
 
 ### UML Diagram
 
+![Diagram](public\Diagram.png)
 
 
 ## Available Scripts
