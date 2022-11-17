@@ -29,11 +29,36 @@ class ActionProvider {
             widget: "menuListAPI",
         }
         );
-
+        const validation = this.createChatBotMessage("Is this what you wanted?",
+        {
+            widget: "validation",
+        }
+        ); 
+        this.updateChatState(userMessage);
+        this.updateChatbotState(message);
+        this.updateChatbotState(validation);
+      };
+      displayFullRecipe = (id) => {
+        const userMessage = createClientMessage("Yes!");
+        const message = this.createChatBotMessage("Here is the full recipe for you!",
+        {
+            widget: "recipeAPI",
+        }
+        );
         this.updateChatState(userMessage);
         this.updateChatbotState(message);
       };
-          
+    getMealForm = () => {
+        const userMessage = createClientMessage("No!");
+        const message = this.createChatBotMessage("Okay, let's try again!",
+        {
+            widget: "mealForm",
+        }
+        );
+        this.updateChatState(userMessage);
+        this.updateChatbotState(message);
+      };
+
 
     greet = () => {
       const greetingMessage = this.createChatBotMessage("Hello, friend.");

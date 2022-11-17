@@ -1,9 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import "./RandomList.css";
+import "./Recipe.css";
 import axios from 'axios';
 
-const RandomList = () => {
+
+const Recipe = () => {
     const [meal, setMeal] = useState({});
     useEffect(() => {
         getMeals();
@@ -32,10 +33,14 @@ const RandomList = () => {
                         <img src={meal.strMealThumb} alt="Meal Image" />
                         {meal.strCategory ? <p><strong>Category:</strong> {meal.strCategory}</p> : ''}
                         {meal.strArea ? <p><strong>Area:</strong> {meal.strArea}</p> : ''}
-                        {meal.strTags ? <p><strong>Tags:</strong> {meal.strTags.split(',').join(', ')}</p> : ''}
                     </div>
                     <div className="columns seven">
                         <h4>{meal.strMeal}</h4>
+                        <h5>Ingredients:</h5>
+                        <ul>
+                            {ingredients.map(ingredient => ingredient).join('')}
+                        </ul>
+                        <p>{meal.strInstructions}</p>
                     </div>
                 </div>
                 
@@ -46,4 +51,4 @@ const RandomList = () => {
     );
 };
 
-export default RandomList;
+export default Recipe;
