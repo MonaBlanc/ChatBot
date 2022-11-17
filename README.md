@@ -20,7 +20,7 @@ Install the CodeMetrics Add-on via [VSCodeMarketplace](https://marketplace.visua
 
 Once in the project do `Ctrl + Maj + P` in order to open the command palette and type "Toggle Code Metrics" to generate the code metrics that will be displayed in each files with a comment.
 
-![Metrics](public\Metrics.PNG)
+![Metrics](public/Metrics.PNG)
 
 ### Calculating coverage & Unit Testing
 
@@ -28,7 +28,7 @@ Using [Jest](https://jestjs.io/) we can do unit test and then calculate coverage
 
 ### UML Diagram
 
-![Diagram](public\Diagram.png)
+![Diagram](public/Diagram.png)
 
 
 ## Available Scripts
