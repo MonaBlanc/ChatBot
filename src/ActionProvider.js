@@ -38,7 +38,7 @@ class ActionProvider {
         this.updateChatbotState(message);
         this.updateChatbotState(validation);
       };
-      displayFullRecipe = (id) => {
+      displayFullRecipe = () => {
         const userMessage = createClientMessage("Yes!");
         const message = this.createChatBotMessage("Here is the full recipe for you!",
         {
