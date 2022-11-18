@@ -32,17 +32,19 @@ class ActionProvider {
         const validation = this.createChatBotMessage("Is this what you wanted?",
         {
             widget: "validation",
+            
         }
         ); 
         this.updateChatState(userMessage);
         this.updateChatbotState(message);
         this.updateChatbotState(validation);
       };
-      displayFullRecipe = () => {
+      displayFullRecipe = (id) => {
         const userMessage = createClientMessage("Yes!");
         const message = this.createChatBotMessage("Here is the full recipe for you!",
         {
             widget: "recipeAPI",
+            props: {  id: id },
         }
         );
         this.updateChatState(userMessage);
