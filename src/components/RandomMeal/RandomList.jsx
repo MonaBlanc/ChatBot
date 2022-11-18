@@ -1,18 +1,31 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./RandomList.css";
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { randomMealAction } from '../../container/actions';
 
 const RandomList = () => {
+    const dispatch = useDispatch();
     const [meal, setMeal] = useState({});
     useEffect(() => {
-        getMeals();
-    }, []);
-    async function getMeals() {
-        await axios(`https://www.themealdb.com/api/json/v1/1/random.php`)
-            .then(response => setMeal(response.data.meals[0]))
+        const random = dispatch(randomMealAction());
+        random
+            .then(data => {
+                setMeal(data.meals[0]);
+            }).catch(error => {
+                alert(error.data.err);
+            });
+    }, [])
+    const ingredients = [];
+    // Get all ingredients from the object. Up to 20
+    for (let i = 1; i <= 20; i++) {
+        if (meal[`strIngredient${i}`]) {
+            ingredients.push(`${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`)
+        } else {
+            // Stop if no more ingredients
+            break;
+        }
     }
-    console.log(meal);
     return (
         <>
             {
