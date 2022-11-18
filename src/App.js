@@ -1,24 +1,23 @@
-/**
- * Webpack config for development
- */
 import React from 'react';
 import Chatbot from 'react-chatbot-kit'
 import './App.css';
-
-/**
- * Action config
- */
+import Home from './components/Pages/Home';
 import ActionProvider from './ActionProvider';
 import MessageParser from './MessageParser';
 import config from './config';
- 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser}/>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/chatbot" element={
+          <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} />
+        } />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

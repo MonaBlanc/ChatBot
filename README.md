@@ -4,6 +4,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 The Group is composed by Steven, Faly, Ayoub and Kimberley.
 
+## \#Rendu n°1:
+First draft available with 2 main features:
+    • Landing page
+    • random meal generation 
+
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
+Open [http://localhost:3000/chatbot](http://localhost:3000/chatbot) to view chatbot it in your browser.\
+
+
 ## Retrospective elements
 
 ### Calculating metrics
@@ -21,7 +30,6 @@ Using [Jest](https://jestjs.io/) we can do unit test and then calculate coverage
 ### UML Diagram
 
 ![Diagram](public\Diagram.png)
-
 
 ## Available Scripts
 
