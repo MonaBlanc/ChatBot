@@ -37,7 +37,6 @@ const RandomList = (props) => {
                         {meal.strArea ? <p><strong>Area:</strong> {meal.strArea}</p> : ''}
                         {meal.strTags ? <p><strong>Tags:</strong> {meal.strTags.split(',').join(', ')}</p> : ''}
                     </div>
-
                 </div>
             }
         </>
