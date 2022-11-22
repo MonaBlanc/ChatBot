@@ -14,6 +14,14 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
             };
+        case actionType.GET_RECIPE_SUCCESS:
+                return {
+                    ...state,
+                };
+        case actionType.GET_RECIPE_FAIL:
+                return {
+                    ...state,
+                };
         default:
             return state;
     }

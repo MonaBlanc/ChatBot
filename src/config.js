@@ -1,7 +1,8 @@
 import { createChatBotMessage } from 'react-chatbot-kit';
 import OpeningOptions from './components/Opening/OpeningOptions';
-import LinkList from "./components/LinkList/LinkList";
 import RandomList from './components/RandomMeal/RandomList';
+import Recipe from './components/Recipe/Recipe';
+import Validation from './components/Validation/Validation';
 
 const config = { 
   botName: "ChiefBot",
@@ -17,11 +18,19 @@ const config = {
     },
     {
       widgetName: "menuListAPI",
-      widgetFunc: (props) => <RandomList {...props}/>,
+      widgetFunc: (props) => <RandomList {...props}/>,       
+    },
+    {      
+      widgetName: "validation",
+      widgetFunc: (props) => <Validation {...props}/>,       
+    },  
+    {
+      widgetName: "recipeAPI",
+      widgetFunc: (props) => <Recipe {...props}/>,
     },
     {
         widgetName: "mealAPI",
-        widgetFunc: (props) => <LinkList {...props}/>,
+        widgetFunc: (props) => <Recipe {...props}/>,
         props: {
           options: [
             {

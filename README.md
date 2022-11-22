@@ -12,6 +12,7 @@ First draft available with 2 main features:
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
 Open [http://localhost:3000/chatbot](http://localhost:3000/chatbot) to view chatbot it in your browser.\
 
+
 ## Retrospective elements
 
 ### Calculating metrics
@@ -20,7 +21,7 @@ Install the CodeMetrics Add-on via [VSCodeMarketplace](https://marketplace.visua
 
 Once in the project do `Ctrl + Maj + P` in order to open the command palette and type "Toggle Code Metrics" to generate the code metrics that will be displayed in each files with a comment.
 
-![Metrics](public/Metrics.PNG)
+![Metrics](public\Metrics.PNG)
 
 ### Calculating coverage & Unit Testing
 
@@ -28,8 +29,7 @@ Using [Jest](https://jestjs.io/) we can do unit test and then calculate coverage
 
 ### UML Diagram
 
-![Diagram](public/Diagram.png)
-
+![Diagram](public\Diagram.png)
 
 ## Available Scripts
 
