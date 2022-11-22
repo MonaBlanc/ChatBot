@@ -40,10 +40,6 @@ const RandomList = () => {
                             {ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}
                         </ul>
                     </div>
-                    <div className="columns seven">
-                        <h4>{meal.strMeal}</h4>
-                        <p>{meal.strInstructions}</p>
-                    </div>
                 </div>
             }
         </>
