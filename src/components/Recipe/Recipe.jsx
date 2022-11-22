@@ -1,20 +1,26 @@
+import "./Recipe.css";
+
 import React from "react";
 import { useState, useEffect } from "react";
-import "./Recipe.css";
-import axios from 'axios';
 
+import { useDispatch } from 'react-redux';
+import { getRecipeAction } from '../../container/actions';
 
-const Recipe = () => {
+const Recipe = (props) => {
+    const id = props.id;
+    const dispatch = useDispatch();
     const [meal, setMeal] = useState({});
-    useEffect(() => {
-        getMeals();
-    }, []);
-    async function getMeals() {
-        await axios(`https://www.themealdb.com/api/json/v1/1/random.php`)
-            .then(response => setMeal(response.data.meals[0]))
-    }
-    console.log(meal);
-    // const createMeal = (item) => {
+
+        useEffect(() => {
+            const random = dispatch(getRecipeAction(id));
+            random
+                .then(data => {
+                    setMeal(data.meals[0]);
+                }).catch(error => {
+                    alert(error.data.err);
+                });
+        }, [])
+
     const ingredients = [];
     // Get all ingredients from the object. Up to 20
     for (let i = 1; i <= 20; i++) {
@@ -28,26 +34,26 @@ const Recipe = () => {
     return (
         <>
             {
-                <div className="row">
+                <div className="infos row">
+                    <div className="columns seven">
+                        <h3 className="text-xl text-orange">{meal.strMeal}</h3>
+                    </div>
                     <div className="columns five">
                         <img src={meal.strMealThumb} alt="Meal Image" />
                         {meal.strCategory ? <p><strong>Category:</strong> {meal.strCategory}</p> : ''}
                         {meal.strArea ? <p><strong>Area:</strong> {meal.strArea}</p> : ''}
-                    </div>
-                    <div className="columns seven">
-                        <h4>{meal.strMeal}</h4>
+                        {meal.strTags ? <p><strong>Tags:</strong> {meal.strTags.split(',').join(', ')}</p> : ''}
                         <h5>Ingredients:</h5>
                         <ul>
-                            {ingredients.map(ingredient => ingredient).join('')}
+                            {ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}
                         </ul>
+                    </div>
+                    <div className="columns seven">
                         <p>{meal.strInstructions}</p>
                     </div>
                 </div>
-                
             }
-
         </>
-
     );
 };
 

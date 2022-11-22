@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './container/store'
 import './assets/font/quicksand/ttf/quicksand-latin-700-normal.ttf';

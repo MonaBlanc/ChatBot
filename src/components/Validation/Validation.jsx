@@ -5,10 +5,13 @@ const Validation = (props) => {
   const validation = [
     {
         text: "Yes!",
-        handler: props.actionProvider.displayFullRecipe(2),
+        handler: props.actionProvider.displayFullRecipe,
         id: 1,
       },
-    { text: "Not really...", handler: props.actionProvider.getRandomMeal, id: 2 },
+    { text: "Not really...", 
+      handler: props.actionProvider.getRandomMeal,
+      id: 2,
+    },
     { 
       text: "I want to change something", 
       handler: props.actionProvider.getMealForm,
