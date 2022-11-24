@@ -30,9 +30,9 @@ const config = {
     {
       widgetName: "recipeAPI",
       widgetFunc: (props) => <Recipe {...props} />,
-      props: { meal },
+      // props: { meal },
       mapStateToProps: {
-        meal: "meal",
+        // meal: "meal",
       },
     },
     {
