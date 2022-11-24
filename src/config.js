@@ -12,7 +12,7 @@ const config = {
     }),
   ],
   state: {
-    meal: []
+    meal: {},
   },
   widgets: [
     {
@@ -22,6 +22,7 @@ const config = {
     {
       widgetName: "menuListAPI",
       widgetFunc: (props) => <RandomList {...props} />,
+      mapStateToProps: ["meal"],
     },
     {
       widgetName: "validation",
@@ -30,10 +31,7 @@ const config = {
     {
       widgetName: "recipeAPI",
       widgetFunc: (props) => <Recipe {...props} />,
-      // props: { meal },
-      mapStateToProps: {
-        // meal: "meal",
-      },
+      mapStateToProps: ["meal"],
     },
     {
       widgetName: "mealAPI",
