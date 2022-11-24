@@ -4,41 +4,46 @@ import RandomList from './components/RandomMeal/RandomList';
 import Recipe from './components/Recipe/Recipe';
 import Validation from './components/Validation/Validation';
 
-const config = { 
+const config = {
   botName: "ChiefBot",
   initialMessages: [
     createChatBotMessage("Hey, I'm here to help. What do you want to eat?", {
       widget: "OpeningOptions",
     }),
   ],
+  state: {
+    meal: {},
+  },
   widgets: [
     {
       widgetName: "OpeningOptions",
-       widgetFunc: (props) => <OpeningOptions {...props} />,
+      widgetFunc: (props) => <OpeningOptions {...props} />,
     },
     {
       widgetName: "menuListAPI",
-      widgetFunc: (props) => <RandomList {...props}/>,       
+      widgetFunc: (props) => <RandomList {...props} />,
+      mapStateToProps: ["meal"],
     },
-    {      
+    {
       widgetName: "validation",
-      widgetFunc: (props) => <Validation {...props}/>,       
-    },  
+      widgetFunc: (props) => <Validation {...props} />,
+    },
     {
       widgetName: "recipeAPI",
-      widgetFunc: (props) => <Recipe {...props}/>,
+      widgetFunc: (props) => <Recipe {...props} />,
+      mapStateToProps: ["meal"],
     },
     {
-        widgetName: "mealAPI",
-        widgetFunc: (props) => <Recipe {...props}/>,
-        props: {
-          options: [
-            {
-              text: "Meal DB",
-              url:
-                "https://www.themealdb.com/",
-              id: 1,
-            },/*
+      widgetName: "mealAPI",
+      widgetFunc: (props) => <Recipe {...props} />,
+      props: {
+        options: [
+          {
+            text: "Meal DB",
+            url:
+              "https://www.themealdb.com/",
+            id: 1,
+          },/*
             {
               text: "Mozilla JS Guide",
               url:
@@ -50,10 +55,10 @@ const config = {
               url: "https://frontendmasters.com",
               id: 3,
             },*/
-          ],
-        },
+        ],
       },
-],
+    },
+  ],
   customStyles: {
     botMessageBox: {
       backgroundColor: "#376B7E",
