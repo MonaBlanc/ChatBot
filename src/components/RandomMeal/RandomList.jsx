@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import "./RandomList.css";
 import { useDispatch } from 'react-redux';
 import { randomMealAction } from '../../container/actions';
-import Recipe from "../Recipe/Recipe";
-import { Connect } from "react-redux";
 
 const RandomList = (props) => {
     const dispatch = useDispatch();
@@ -19,11 +17,6 @@ const RandomList = (props) => {
                 alert(error.data.err);
             }); 
     }, [])
-    const mealExport = (meal) => {
-        return {
-        meal: meal 
-        };
-    };
     return (
         <>
             {
@@ -42,3 +35,4 @@ const RandomList = (props) => {
         </>
     );
 };
+export default RandomList;

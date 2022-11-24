@@ -6,21 +6,27 @@ import { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { getRecipeAction } from '../../container/actions';
 
+
 const Recipe = (props) => {
-    const id = props.id;
+     const id = props.id;
+
     const dispatch = useDispatch();
-    const [meal, setMeal] = useState({});
+     const [meal, setMeal] = useState({});
 
-        useEffect(() => {
-            const random = dispatch(getRecipeAction(id));
-            random
-                .then(data => {
-                    setMeal(data.meals[0]);
-                }).catch(error => {
-                    alert(error.data.err);
-                });
-        }, [])
+         useEffect(() => {
+            console.log(id);
 
+             const recipeDetails = dispatch(getRecipeAction(id));
+
+             recipeDetails
+                 .then(data => {
+                     setMeal(data.meals[0]);
+                 }).catch(error => {
+                     alert(error.data.err);
+                 });
+         }, [])
+
+    console.log(meal);
     const ingredients = [];
     // Get all ingredients from the object. Up to 20
     for (let i = 1; i <= 20; i++) {

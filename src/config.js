@@ -18,7 +18,8 @@ const config = {
     },
     {
       widgetName: "menuListAPI",
-      widgetFunc: (props) => <RandomList {...props}/>,       
+      widgetFunc: (props) => <RandomList {...props}/>,
+      
     },
     {      
       widgetName: "validation",
@@ -27,6 +28,7 @@ const config = {
     {
       widgetName: "recipeAPI",
       widgetFunc: (props) => <Recipe {...props}/>,
+      props: { id: 52772},
     },
     {
         widgetName: "mealAPI",

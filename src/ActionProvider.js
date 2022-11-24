@@ -39,12 +39,14 @@ class ActionProvider {
         this.updateChatbotState(message);
         this.updateChatbotState(validation);
       };
-      displayFullRecipe = (id) => {
+      displayFullRecipe = (props) => {
+        const recipeID = props.recipeID;
+        console.log(recipeID);
         const userMessage = createClientMessage("Yes!");
         const message = this.createChatBotMessage("Here is the full recipe for you!",
         {
             widget: "recipeAPI",
-            props: {  id: id },
+            props: {  id: recipeID },
         }
         );
         this.updateChatState(userMessage);

@@ -18,7 +18,8 @@ const getRandomMeal = (newUser) => {
 
 const getRecipe = (id) => {
     // GET request on http://localhost:4000/api/register
-    return axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}}`)
+    console.log("i will request " + id);
+    return axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
         .then(response => {
             if (response) {
                 return Promise.resolve(response);

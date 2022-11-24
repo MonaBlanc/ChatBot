@@ -5,6 +5,7 @@ const Validation = (props) => {
   const validation = [
     {
         text: "Yes!",
+        recipeID: props.id,
         handler: props.actionProvider.displayFullRecipe,
         id: 1,
       },
@@ -23,7 +24,7 @@ const Validation = (props) => {
     <button
       className="validation-button"
       key={validation.id}
-      onClick={validation.handler}
+      onClick={e=>validation.handler(e, validation.recipeID)}
     >
       {validation.text}
     </button>

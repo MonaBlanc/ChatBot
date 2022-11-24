@@ -6,6 +6,7 @@ export const getRecipeAction = (id) => (dispatch) => {
     // make sure dispatch is asynchronous
     // dispatch should be implemented in an action not into the component
     // use redux-thunk (in store.js) to do that
+    console.log(id);
     return MealsService.getRecipe(id)
         .then(response => {
             dispatch({
