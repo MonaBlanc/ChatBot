@@ -1,5 +1,5 @@
 import "./Recipe.css";
-
+import "../../assets/css/Chefbot.css";
 import React from "react";
 
 const Recipe = (props) => {

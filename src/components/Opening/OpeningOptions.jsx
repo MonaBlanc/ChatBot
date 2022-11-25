@@ -1,20 +1,21 @@
 import React from "react";
-import "./OpeningOptions.css";
+import "../../assets/css/Chefbot.css";
+import "./OpeningOptions.css"
 
 const OpeningOptions = (props) => {
   const options = [
     {
-        text: "Go to the fridge",
-        handler: props.actionProvider.goToFridge,
-        id: 1,
-      },
-    { text: "I have something in mind", handler: () => {}, id: 2 },
-    { 
-      text: "I have no idea", 
+      text: "Go to the fridge",
+      handler: props.actionProvider.goToFridge,
+      id: 1,
+    },
+    { text: "I have something in mind", handler: () => { }, id: 2 },
+    {
+      text: "I have no idea",
       handler: props.actionProvider.getRandomMeal,
       id: 3,
     },
-    { text: "Quit", handler: () => {}, id: 4 },
+    { text: "Quit", handler: () => { }, id: 4 },
   ];
 
   const optionsMarkup = options.map((option) => (
