@@ -1,6 +1,8 @@
 import React from "react";
 
 import "./LinkList.css";
+import "../../assets/css/Chefbot.css";
+
 
 const LinkList = (props) => {
   const linkMarkup = props.options.map((link) => (
