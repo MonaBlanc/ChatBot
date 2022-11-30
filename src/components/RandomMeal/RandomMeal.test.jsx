@@ -9,7 +9,7 @@ describe("RandomMeal", () => {
     });
   });
 
-
+/*
 test('should fetch ingredients', () => {
   const meal = [{ingredients: ''}];
   const resp = {data: meal};
@@ -17,4 +17,4 @@ test('should fetch ingredients', () => {
 
 
   return RandomList.getIngredients().then(data => expect(data).toEqual(meal));
-});
+});*/
