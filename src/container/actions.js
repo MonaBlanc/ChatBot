@@ -23,9 +23,6 @@ export const getRecipeAction = (id) => (dispatch) => {
         })
 }
 
-
-
-
 // get random meal action
 export const randomMealAction = () => (dispatch) => {
     // make sure dispatch is asynchronous
