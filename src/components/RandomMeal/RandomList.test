@@ -2,7 +2,7 @@ import React from "react";
 import mount from "enzyme";
 import { Provider } from 'react-redux';
 import { configure } from 'enzyme';
-import Adapter from "enzyme-adapter-react-16";
+import Adapter from "enzyme-adapter-react";
 import RandomList from "./RandomList";
 
 configure({ adapter: new Adapter() });

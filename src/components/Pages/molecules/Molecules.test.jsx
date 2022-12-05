@@ -1,29 +1,17 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import Header from './Header';
-import Footer from './Footer';
-import Hero from './Hero';
-import Slider from './Hero';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import { MemoryRouter as Router } from 'react-router-dom';
+import React from "react";
+import { render, screen, cleanup } from '@testing-library/react';
+import '@testing-library/jest-dom'
+import Header from "./Header";
+import { Router } from 'react-router-dom';
 
-configure({ adapter: new Adapter() });
-describe('Header test', () => {
-    const header = shallow(<Router><Header /></Router>);
-    it('should match the snapshot', () => {
-        expect(header.html()).toMatchSnapshot();
+afterEach(cleanup);
+describe('Molecules', () => {
+    it.only('Header render test: one logo, three links and an account button', () => {
+        render(<Router><Header /></Router>);
+        expect(getByTestId("logo")).toHaveTextContent('Logo Chatbot');
+        expect(getByTestId("link1")).toHaveTextContent('Home');
+        expect(getByTestId("link2")).toHaveTextContent('Fridge');
+        expect(getByTestId("link3")).toHaveTextContent('Help');
+        expect(getByText("Fridge")).toHaveClass("text-orange");
     });
-});
-describe('Footer test', () => {
-    const footer = shallow(<Router><Footer /></Router>);
-    it('should match the snapshot', () => {
-        expect(footer.html()).toMatchSnapshot();
-    });
-});
-describe('Hero test', () => {
-    const hero = shallow(<Router><Hero /></Router>);
-    it('should match the snapshot', () => {
-        expect(hero.html()).toMatchSnapshot();
-    });
-});
+})
