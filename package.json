@@ -16,9 +16,9 @@
     "mongodb": "^4.11.0",
     "mongoose": "^6.7.2",
     "node-fetch": "^3.3.0",
-    "react": "^16.14.0",
+    "react": "^18.2.0",
     "react-chatbot-kit": "^2.1.0",
-    "react-dom": "^16.14.0",
+    "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
@@ -30,8 +30,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage --transformIgnorePatterns \"node_modules/(?!axios)/\"",
-    "test-jest": "jest --coverage",
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -53,8 +52,8 @@
     ]
   },
   "devDependencies": {
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.7",
-    "fetch-mock": "^9.11.0"
+    "fetch-mock": "^9.11.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^7.8.3"
   }
 }
