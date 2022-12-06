@@ -3,6 +3,7 @@ import "../../assets/css/Chefbot.css";
 import "./OpeningOptions.css"
 
 const OpeningOptions = (props) => {
+  console.log(props);
   const options = [
     {
       text: "Go to the fridge",
