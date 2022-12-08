@@ -1,6 +1,6 @@
 import React from "react";
 import RandomList from "./RandomList";
-import { render, unmountComponentAtNode } from "react-dom";
+import { render } from "@testing-library/react";
 import { Provider } from 'react-redux'
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
@@ -14,7 +14,6 @@ beforeEach(() => {
 
 afterEach(() => {
   // cleanup on exiting
-  unmountComponentAtNode(container);
   container.remove();
   container = null;
 });

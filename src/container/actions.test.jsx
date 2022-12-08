@@ -1,21 +1,11 @@
 import React from "react";
-import Recipe from "./Recipe";
-import { render, screen } from "@testing-library/react";
-let container = null;
-beforeEach(() => {
-    // setup a DOM element as a render target
-    container = document.createElement("div");
-    document.body.appendChild(container);
-});
+import * as action from "./actions"
 
-afterEach(() => {
-    // cleanup on exiting
-    container.remove();
-    container = null;
-});
-describe("Recipe render", () => {
-    test("Recipe render", () => {
-        const meal = {
+describe("Test actions functioning", () => {
+    test("Test getrecipeAction", () => {
+        const id = "52965";
+        const received = action.getRecipeAction(id);
+        const expected = Promise.resolve({
             "idMeal": "52965",
             "strMeal": "Breakfast Potatoes",
             "strDrinkAlternate": null,
@@ -47,8 +37,8 @@ describe("Recipe render", () => {
             "strMeasure10": " ", "strMeasure11": " ", "strMeasure12": " ", "strMeasure13": " ", "strMeasure14": " ", "strMeasure15": " ", "strMeasure16": " ", "strMeasure17": " ", "strMeasure18": " ", "strMeasure19": " ", "strMeasure20": " ",
             "strSource": "http:\/\/www.vodkaandbiscuits.com\/2014\/03\/06\/bangin-breakfast-potatoes\/",
             "strImageSource": null, "strCreativeCommonsConfirmed": null, "dateModified": null
-        };
-        render(<Recipe meal={meal} />, container);
-        screen.getByText(meal["strArea"]);
-    });
+        });
+        expect(received).toBe(expected);
+    })
 });
+
