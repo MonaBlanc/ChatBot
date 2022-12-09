@@ -1,4 +1,3 @@
-import React from "react";
 import * as action from "./actions"
 
 describe("Test actions functioning", () => {

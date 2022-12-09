@@ -26,4 +26,8 @@ describe("RandomList render", () => {
     store = mockStore(initialState)
     render(<Provider store={store}><RandomList /></Provider>, container);
   });
-});
+  test("RandomList snapshot", () => {
+    const snapshot = render(<Provider store={store}><RandomList /></Provider>, container);
+    expect(snapshot).toMatchSnapshot();
+  })
+}); 
