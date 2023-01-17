@@ -17,7 +17,6 @@ class ActionProvider {
             widget: "mealAPI",
           }
         );
-
         this.updateChatState(userMessage);
         this.updateChatbotState(message);
       };
@@ -61,6 +60,16 @@ class ActionProvider {
         this.updateChatbotState(message);
       };
 
+    getInitForm = () => {
+        const userMessage = createClientMessage("I would like to make a specific request!");
+        const message = this.createChatBotMessage("Okay, let's go through some questions!",
+        {
+            widget: "mealForm",
+        }
+        );
+        this.updateChatState(userMessage);
+        this.updateChatbotState(message);
+      };
 
     greet = () => {
       const greetingMessage = this.createChatBotMessage("Hello, friend.");
