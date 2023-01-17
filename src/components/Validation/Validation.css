@@ -1,0 +1,13 @@
+.validation-container {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .validation-button {
+    padding: 0.5rem;
+    border-radius: 25px;
+    background: transparent;
+    border: 1px solid #FF7500;
+    margin: 3px;
+  }

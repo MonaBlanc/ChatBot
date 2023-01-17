@@ -4,7 +4,32 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 The Group is composed by Steven, Faly, Ayoub and Kimberley.
 
+## \#Rendu n°1:
+First draft available with 2 main features:
+    • Landing page
+    • random meal generation 
 
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
+Open [http://localhost:3000/chatbot](http://localhost:3000/chatbot) to view chatbot it in your browser.\
+
+
+## Retrospective elements
+
+### Calculating metrics
+
+Install the CodeMetrics Add-on via [VSCodeMarketplace](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-codemetrics)
+
+Once in the project do `Ctrl + Maj + P` in order to open the command palette and type "Toggle Code Metrics" to generate the code metrics that will be displayed in each files with a comment.
+
+![Metrics](public\Metrics.PNG)
+
+### Calculating coverage & Unit Testing
+
+Using [Jest](https://jestjs.io/) we can do unit test and then calculate coverage with the `--coverage` command. It is a work in progress, you can check RandomMeal.test.jsx for an example of the API test.
+
+### UML Diagram
+
+![Diagram](public\Diagram.png)
 
 ## Available Scripts
 
@@ -32,13 +57,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
