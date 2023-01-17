@@ -1,4 +1,5 @@
 import { createChatBotMessage } from 'react-chatbot-kit';
+import LinkList from './components/LinkList/LinkList';
 import OpeningOptions from './components/Opening/OpeningOptions';
 import RandomList from './components/RandomMeal/RandomList';
 import Recipe from './components/Recipe/Recipe';
@@ -35,7 +36,7 @@ const config = {
     },
     {
       widgetName: "mealAPI",
-      widgetFunc: (props) => <Recipe {...props} />,
+      widgetFunc: (props) => <LinkList {...props} />,
       props: {
         options: [
           {
@@ -43,18 +44,31 @@ const config = {
             url:
               "https://www.themealdb.com/",
             id: 1,
-          },/*
-            {
-              text: "Mozilla JS Guide",
-              url:
-                "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
-              id: 2,
-            },
-            {
-              text: "Frontend Masters",
-              url: "https://frontendmasters.com",
-              id: 3,
-            },*/
+          },
+        ],
+      },
+    },
+    {
+      widgetName: "mealForm",
+      widgetFunc: (props) => <LinkList {...props} />,
+      props: {
+        options: [
+          {
+            text: "Diet",
+            id: 1,
+          },
+          {
+            text: "Type of Dish",
+            id: 2,
+          },
+          {
+            text: "Main ingredient",
+            id: 3,
+          },
+          {
+            text: "Allergies",
+            id: 4,
+          },
         ],
       },
     },
