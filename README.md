@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The Group is composed by Steven, Faly, Ayoub and Kimberley.
+The Group is composed of Steven, Faly, Ayoub and Kimberley.
 
 ## \#Rendu n°1:
 First draft available with 2 main features:
