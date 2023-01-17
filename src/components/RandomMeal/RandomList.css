@@ -74,10 +74,6 @@ button.floating-btn:hover {
 	transform: translateX(-50%);
 }
 
-.infos{
-	
-}
-
 .floating-text a {
 	color: #FF7500;
 	text-decoration: none;
@@ -97,4 +93,38 @@ button.floating-btn:hover {
 .p{
 	color: #FF7500;
 	text-decoration: none;
+}
+
+.img-thumb{
+	width: 150px;
+	border-radius: 100px;
+	position: absolute;
+	top: -75px;
+}
+/* 
+.infos{
+	background-color: #E14D2A;
+	width: 200px;
+	min-height: 30vh;
+	color: white;
+	padding: 10px;
+	position: relative;
+} */
+
+.infos {
+  margin: 100px 52px 15px 52px;
+  background-color: #E14D2A !important; 
+  padding: 90px 10px 10px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: medium;
+  position: relative;
+  width: 184.5px;
+  /* margin-left: auto; */
+  text-align: left;
+}
+
+strong{
+	font-weight: 600;
 }
