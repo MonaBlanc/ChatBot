@@ -60,7 +60,7 @@ class ActionProvider {
         this.updateChatbotState(message);
       };
 
-    getInitForm = () => {
+      getInitForm = () => {
         const userMessage = createClientMessage("I would like to make a specific request!");
         const message = this.createChatBotMessage("Okay, let's go through some questions!",
         {

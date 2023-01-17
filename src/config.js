@@ -4,6 +4,8 @@ import OpeningOptions from './components/Opening/OpeningOptions';
 import RandomList from './components/RandomMeal/RandomList';
 import Recipe from './components/Recipe/Recipe';
 import Validation from './components/Validation/Validation';
+import MealForm from './components/MealForm/MealForm';
+
 
 const config = {
   botName: "ChiefBot",
@@ -50,27 +52,7 @@ const config = {
     },
     {
       widgetName: "mealForm",
-      widgetFunc: (props) => <LinkList {...props} />,
-      props: {
-        options: [
-          {
-            text: "Diet",
-            id: 1,
-          },
-          {
-            text: "Type of Dish",
-            id: 2,
-          },
-          {
-            text: "Main ingredient",
-            id: 3,
-          },
-          {
-            text: "Allergies",
-            id: 4,
-          },
-        ],
-      },
+      widgetFunc: (props) => <MealForm {...props} />,
     },
   ],
   customStyles: {
