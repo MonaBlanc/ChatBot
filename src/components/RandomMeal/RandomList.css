@@ -100,6 +100,7 @@ button.floating-btn:hover {
 	border-radius: 100px;
 	position: absolute;
 	top: -75px;
+	left: 20px;
 }
 /* 
 .infos{
