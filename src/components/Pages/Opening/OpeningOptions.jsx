@@ -1,5 +1,4 @@
 import React from "react";
-import "../../assets/css/Chefbot.css";
 import "./OpeningOptions.css"
 
 const OpeningOptions = (props) => {

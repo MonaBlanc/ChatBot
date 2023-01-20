@@ -1,9 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./RandomList.css";
-import "../../assets/css/Chefbot.css";
 import { useDispatch } from 'react-redux';
-import { randomMealAction } from '../../container/actions';
+import { randomMealAction } from '../../../container/actions';
 
 const RandomList = (props) => {
     const { setState } = props;

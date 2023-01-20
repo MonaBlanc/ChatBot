@@ -148,6 +148,7 @@
   position: relative;
   width: 50%;
   min-height: 78vh;
+  margin: auto;
 }
 
 .react-chatbot-kit-chat-inner-container {
@@ -175,6 +176,10 @@
   width: 70%;
   left: 15%;
   right: 15%;
+}
+
+.layout-row{
+  display: flex;
 }
 
 .react-chatbot-kit-chat-message-container {
