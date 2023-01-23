@@ -31,8 +31,7 @@ class ActionProvider {
         );
         const validation = this.createChatBotMessage("Is this what you wanted?",
         {
-            widget: "validation",
-            
+            widget: "validation",   
         }
         ); 
         this.updateChatState(userMessage);

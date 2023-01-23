@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./OpeningOptions.css"
 
 const OpeningOptions = (props) => {
+  const { setState } = props;
+  useEffect(() => {
+    setState(chatState => ({ ...chatState, chatState: "random" }))
+  }, [])
   const options = [
     {
       text: "Go to the fridge",

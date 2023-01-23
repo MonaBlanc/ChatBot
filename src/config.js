@@ -13,11 +13,13 @@ const config = {
   ],
   state: {
     meal: {},
+    chatState: "",
   },
   widgets: [
     {
       widgetName: "OpeningOptions",
       widgetFunc: (props) => <OpeningOptions {...props} />,
+      mapStateToProps: ["chatState"],
     },
     {
       widgetName: "menuListAPI",
