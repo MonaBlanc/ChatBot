@@ -11,7 +11,7 @@ const OpeningOptions = (props) => {
     },
     { 
       text: "I have something in mind", 
-      handler: props.actionProvider.getInitForm, 
+      handler: props.actionProvider.getFormMeal, 
       id: 2, },
     {
       text: "I have no idea",

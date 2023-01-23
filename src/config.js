@@ -5,6 +5,7 @@ import RandomList from './components/RandomMeal/RandomList';
 import Recipe from './components/Recipe/Recipe';
 import Validation from './components/Validation/Validation';
 import MealForm from './components/MealForm/MealForm';
+import FormList from './components/FormMeal/FormList';
 
 
 const config = {
@@ -26,6 +27,11 @@ const config = {
       widgetName: "menuListAPI",
       widgetFunc: (props) => <RandomList {...props} />,
       mapStateToProps: ["meal"],
+    },
+    {
+      widgetName: "menuFormListAPI",
+      widgetFunc: (props) => <FormList {...props} />,
+      mapStateToProps: ["diet", "dishtype", "main"],
     },
     {
       widgetName: "validation",

@@ -2,8 +2,9 @@ import React from 'react';
 import "./MealForm.css";
 import "../../assets/css/Chefbot.css";
 
+
 const MealForm = () => {
-    console.log("Form component is rendered")
+    console.log("Form component is rendered");
     const [state, setState] = React.useState({
         diet: "",
         dishtype: "",
@@ -22,8 +23,9 @@ const MealForm = () => {
         console.log('A diet was submitted: ' + state.diet);
         console.log('A dishtype was submitted: ' + state.dishtype);
         console.log('A main ingredient was submitted: ' + state.main);
-
         event.preventDefault();
+        
+
         // Perform some action with the form data
     };
 

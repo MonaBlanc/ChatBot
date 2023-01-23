@@ -38,6 +38,7 @@ class ActionProvider {
         this.updateChatbotState(message);
         this.updateChatbotState(validation);
       };
+
       displayFullRecipe = (id) => {
         const userMessage = createClientMessage("Yes!");
         const message = this.createChatBotMessage("Here is the full recipe for you!",
@@ -58,6 +59,23 @@ class ActionProvider {
         );
         this.updateChatState(userMessage);
         this.updateChatbotState(message);
+      };
+    getFormMeal = (diet, dishtype, main) => {
+        const userMessage = createClientMessage("That's it!");
+        const message = this.createChatBotMessage("Here is the perfect meal for you!",
+        {
+            widget: "menuFormListAPI",
+            props: {  diet: diet, dishtype: dishtype, main: main },
+        }
+        );
+        const validation = this.createChatBotMessage("Is this ok with you?",
+        {
+            widget: "validation",
+        }
+        );
+        this.updateChatState(userMessage);
+        this.updateChatbotState(message);
+        this.updateChatbotState(validation);
       };
 
       getInitForm = () => {
@@ -88,8 +106,6 @@ class ActionProvider {
             ...prevState, messages: [...prevState.messages, userMessage]
         }))
       }
-
-
   }
   
   export default ActionProvider

@@ -1,17 +1,18 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import "./RandomList.css";
+import "./FormList.css";
 import "../../assets/css/Chefbot.css";
 import { useDispatch } from 'react-redux';
-import { randomMealAction } from '../../container/actions';
+import { getFormMealAction } from '../../container/actions';
 
 
-const RandomList = (props) => {
+const FormList = (props) => {
     const { setState } = props;
     const dispatch = useDispatch();
     const [meal, setMeal] = useState({});
+    console.log("FormList component is rendered");
     useEffect(() => {
-        const random = dispatch(randomMealAction());
+        const random = dispatch(getFormMealAction(props.diet, props.dishtype, props.main));
         random
             .then(data => {
                 setMeal(data.meals[0]);
@@ -38,4 +39,4 @@ const RandomList = (props) => {
         </>
     );
 };
-export default RandomList;
+export default FormList;
