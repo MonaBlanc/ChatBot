@@ -9,6 +9,17 @@ class ActionProvider {
       this.setState = setStateFunc;
     }
 
+  goToFridge = () => {
+    const userMessage = createClientMessage("Opening fridge...");
+    const message = this.createChatBotMessage(
+      "I am so sorry, i can't do that yet... Check our API for now!",
+      {
+        widget: "mealAPI",
+      }
+    );
+    this.updateChatState(userMessage);
+    this.updateChatbotState(message);
+  };
     goToFridge = () => {
         const userMessage = createClientMessage("Opening fridge...");
         const message = this.createChatBotMessage(
@@ -31,7 +42,8 @@ class ActionProvider {
         );
         const validation = this.createChatBotMessage("Is this what you wanted?",
         {
-            widget: "validation",   
+            widget: "validation",
+            
         }
         ); 
         this.updateChatState(userMessage);
@@ -60,6 +72,16 @@ class ActionProvider {
         this.updateChatbotState(message);
       };
 
+      getInitForm = () => {
+        const userMessage = createClientMessage("I would like to make a specific request!");
+        const message = this.createChatBotMessage("Okay, let's go through some questions!",
+        {
+            widget: "mealForm",
+        }
+        );
+        this.updateChatState(userMessage);
+        this.updateChatbotState(message);
+      };
 
     greet = () => {
       const greetingMessage = this.createChatBotMessage("Hello, friend.");
