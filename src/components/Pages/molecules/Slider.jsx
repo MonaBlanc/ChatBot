@@ -9,10 +9,6 @@ export default function Slider() {
         return images;
     }
 
-    function calcDistance(pos) {
-
-    }
-
     console.log(window.screen.width);
     const images = importAll(require.context('../../../assets/img/', false, /\.jpeg$/));
     anime({

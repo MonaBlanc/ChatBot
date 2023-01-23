@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+// import { useEffect } from 'react'
 import "./AnimatedBot.css"
 
 export default function AnimatedBot(props) {

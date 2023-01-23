@@ -4,7 +4,8 @@ const initialState = { isLoggedIn: false, user: null };
 
 // reducer
 export default function rootReducer(state = initialState, action) {
-    const { type, payload } = action;
+    const { type } = action;
+    // const { type, payload } = action;
     switch (type) {
         case actionType.GET_RANDOM_MEAL_SUCCESS:
             return {
@@ -15,13 +16,13 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
             };
         case actionType.GET_RECIPE_SUCCESS:
-                return {
-                    ...state,
-                };
+            return {
+                ...state,
+            };
         case actionType.GET_RECIPE_FAIL:
-                return {
-                    ...state,
-                };
+            return {
+                ...state,
+            };
         default:
             return state;
     }

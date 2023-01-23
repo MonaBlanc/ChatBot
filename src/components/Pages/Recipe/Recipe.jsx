@@ -9,7 +9,7 @@ const Recipe = (props) => {
         <>
             {
                 <div className="infos-recipe row">
-                    <img className="thumb" src={meal.strMealThumb} alt="Meal Image" />
+                    <img className="thumb" alt="meal-thumb" src={meal.strMealThumb} />
                     <div className="columns seven recipe-title">
                         <h3 className="text-xl">{meal.strMeal}</h3>
                     </div>
