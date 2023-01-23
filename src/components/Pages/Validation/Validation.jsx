@@ -1,6 +1,5 @@
 import React from "react";
 import "./Validation.css";
-import "../../assets/css/Chefbot.css";
 
 const Validation = (props) => {
   const validation = [

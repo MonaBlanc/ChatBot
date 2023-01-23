@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './molecules/Header';
-import Footer from './molecules/Footer';
-import Hero from './molecules/Hero';
-import Slider from './molecules/Slider';
+import Header from '../molecules/Header';
+import Footer from '../molecules/Footer';
+import Hero from '../molecules/Hero';
+import Slider from '../molecules/Slider';
 import AddIcon from '@mui/icons-material/Add';
 import KitchenRoundedIcon from '@mui/icons-material/KitchenRounded';
 import RestaurantMenuRoundedIcon from '@mui/icons-material/RestaurantMenuRounded';
@@ -86,7 +86,7 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <img src={require('../../assets/img/bot.png')} alt="bot" className="w-1/4 h-3/4 mx-auto md:mt-0 mt-12" />
+                                <img src={require('../../../assets/img/bot.png')} alt="bot" className="w-1/4 h-3/4 mx-auto md:mt-0 mt-12" />
                             </div>
                         </div>
                     </section>

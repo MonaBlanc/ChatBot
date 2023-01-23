@@ -6,6 +6,29 @@
 	padding: 0;
 }
 
+.infos-recipe{
+	background-color: #E14D2A;
+	width: 400px;
+	min-height: 30vh;
+	color: white;
+	padding: 10px;
+	position: relative;
+	margin: 100px 0 0 50px;
+	border-radius: 20px;
+}
+
+.recipe-title{
+	margin: 70px 0 20px 0;
+}
+
+.thumb{
+	width: 150px;
+	border-radius: 100px;
+	position: absolute;
+	top: -75px;
+	left: 130px;
+}
+
 .content {
     display: flex;
     align-items: flex-start;
@@ -30,8 +53,6 @@
 	width: 100%;
 	height: 100%;
 }
-
-
 
 .floating-btn {
 	border-radius: 26.5px;
@@ -72,10 +93,6 @@ button.floating-btn:hover {
 	bottom: 0;
 	left: 50%;
 	transform: translateX(-50%);
-}
-
-.infos{
-	
 }
 
 .floating-text a {

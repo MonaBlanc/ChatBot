@@ -1,11 +1,11 @@
 import { createChatBotMessage } from 'react-chatbot-kit';
-import OpeningOptions from './components/Opening/OpeningOptions';
-import RandomList from './components/RandomMeal/RandomList';
-import Recipe from './components/Recipe/Recipe';
-import Validation from './components/Validation/Validation';
+import OpeningOptions from './components/Pages/Opening/OpeningOptions';
+import RandomList from './components/Pages/RandomMeal/RandomList';
+import Recipe from './components/Pages/Recipe/Recipe';
+import Validation from './components/Pages/Validation/Validation';
 
 const config = {
-  botName: "ChiefBot",
+  botName: "ChefBot",
   initialMessages: [
     createChatBotMessage("Hey, I'm here to help. What do you want to eat?", {
       widget: "OpeningOptions",
@@ -13,11 +13,13 @@ const config = {
   ],
   state: {
     meal: {},
+    chatState: "",
   },
   widgets: [
     {
       widgetName: "OpeningOptions",
       widgetFunc: (props) => <OpeningOptions {...props} />,
+      mapStateToProps: ["chatState"],
     },
     {
       widgetName: "menuListAPI",
