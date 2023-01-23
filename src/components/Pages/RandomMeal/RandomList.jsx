@@ -8,7 +8,7 @@ const RandomList = (props) => {
     const dispatch = useDispatch();
     const { setState } = props;
     const [meal, setMeal] = useState({});
-    useEffect((props) => {
+    useEffect(() => {
         const random = dispatch(randomMealAction());
         random
             .then(data => {
@@ -16,7 +16,7 @@ const RandomList = (props) => {
                 setState(state => ({ ...state, meal: data.meals[0] }))
             }).catch(error => {
                 alert(error);
-            });
+            }); // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
         <>

@@ -8,8 +8,6 @@ export default function Slider() {
         r.keys().map((item, index) => (images[item.replace('./', '')] = r(item)));
         return images;
     }
-
-    console.log(window.screen.width);
     const images = importAll(require.context('../../../assets/img/', false, /\.jpeg$/));
     anime({
         targets: '',
@@ -22,7 +20,7 @@ export default function Slider() {
     return (
         <div id='slider' className='flex flex-row justify-evenly mt-8 mb-12'>
             {Object.keys(images).map((key) =>
-                <img className='dish rounded-full h-32 w-32' src={images[key]} alt={key} />
+                <img className='dish rounded-full h-32 w-32' src={images[key]} key={key} alt={key} />
             )}
         </div>
     )
