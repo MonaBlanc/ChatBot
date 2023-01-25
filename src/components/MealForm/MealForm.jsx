@@ -3,29 +3,32 @@ import "./MealForm.css";
 import "../../assets/css/Chefbot.css";
 
 
-const MealForm = () => {
+const MealForm = (props) => {
     console.log("Form component is rendered");
-    const [state, setState] = React.useState({
-        diet: "",
-        dishtype: "",
-        main: ""
-      })
+    const { state, setState } = props;
+
+    // const [state, setState] = React.useState({
+    //     diet: "",
+    //     dishtype: "",
+    //     main: ""
+    //   })
       
     const handleChange = event => {
         const value = event.target.value;
-        setState({
-            ...state,
-            [event.target.name]: value
-        });
+        setState(state => ({ ...state, [event.target.name]: value }));
+
+        // setState({
+        //     ...state,
+        //     [event.target.name]: value
+        // });
     };
 
     const handleSubmit = event => {
         console.log('A diet was submitted: ' + state.diet);
         console.log('A dishtype was submitted: ' + state.dishtype);
         console.log('A main ingredient was submitted: ' + state.main);
+        props.actionProvider.getFormMeal(state.diet, state.dishtype, state.main);
         event.preventDefault();
-        
-
         // Perform some action with the form data
     };
 

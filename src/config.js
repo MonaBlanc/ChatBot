@@ -17,6 +17,9 @@ const config = {
   ],
   state: {
     meal: {},
+    diet: "",
+    dishtype: "",
+    main: "",
   },
   widgets: [
     {

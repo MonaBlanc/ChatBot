@@ -7,12 +7,13 @@ import { getFormMealAction } from '../../container/actions';
 
 
 const FormList = (props) => {
-    const { setState } = props;
+    const { state, setState } = props;
     const dispatch = useDispatch();
     const [meal, setMeal] = useState({});
     console.log("FormList component is rendered");
+    console.log(props);
     useEffect(() => {
-        const random = dispatch(getFormMealAction(props.diet, props.dishtype, props.main));
+        const random = dispatch(getFormMealAction(state.diet, state.dishtype, state.main));
         random
             .then(data => {
                 setMeal(data.meals[0]);

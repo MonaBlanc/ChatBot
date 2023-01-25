@@ -17,6 +17,7 @@ const getRandomMeal = (newUser) => {
 }
 
 const getFormMeal = (diet, dishtype, main) => {
+    console.log(diet, dishtype, main);
     // GET request on http://localhost:4000/api/register
     let filter = "";
     // Get Filtered Meal
@@ -38,6 +39,9 @@ const getFormMeal = (diet, dishtype, main) => {
     else{
         filter += main;
     }
+    console.log(filter);
+    console.log(`https://www.themealdb.com/api/json/v1/1/random.php/filter.php?c=${filter}`);
+
 
     return axios.get(`https://www.themealdb.com/api/json/v1/1/random.php/filter.php?c=${filter}`)
         .then(response => {

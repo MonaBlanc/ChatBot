@@ -50,6 +50,8 @@ class ActionProvider {
         this.updateChatState(userMessage);
         this.updateChatbotState(message);
       };
+
+
     getMealForm = () => {
         const userMessage = createClientMessage("No!");
         const message = this.createChatBotMessage("Okay, let's try again!",
@@ -60,6 +62,7 @@ class ActionProvider {
         this.updateChatState(userMessage);
         this.updateChatbotState(message);
       };
+      
     getFormMeal = (diet, dishtype, main) => {
         const userMessage = createClientMessage("That's it!");
         const message = this.createChatBotMessage("Here is the perfect meal for you!",
