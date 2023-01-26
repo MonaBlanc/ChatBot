@@ -52,7 +52,7 @@ export const getFormMealAction = (diet, dishtype, main) => (dispatch) => {
     // make sure dispatch is asynchronous
     // dispatch should be implemented in an action not into the component
     // use redux-thunk (in store.js) to do that
-    return MealsService.getFormMeal (diet, dishtype, main)
+    return MealsService.getFormMeal(diet, dishtype, main)
         .then(response => {
             dispatch({
                 type: actionType.GET_FORM_MEAL_SUCCESS,
