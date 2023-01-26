@@ -1,52 +1,45 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./MealForm.css";
 import "../../assets/css/Chefbot.css";
 
-const MealForm = () => {
-    console.log("Form component is rendered")
-    const [FormData, setFormData] = useState({ diet: "", dish: "", mainIngredient: "" });
-    const handleChange = event => {
-        console.log(event.target.name + ": " + event.target.value);
-    };
 
-    const handleSelect = (event) => {
-        console.log(FormData);
-        console.log(event.target.name + ": " + event.target.value)
-        if (event.target.name == "diet")
-            setFormData(FormData.diet = event.target.value)
-        else if (event.target.name == "dish")
-            setFormData(FormData.dish = event.target.value)
-        else if (event.target.name == "mainIngredient")
-            setFormData(FormData.mainIngredient = event.target.value)
-    }
+const MealForm = (props) => {
+    const { state, setState } = props;
+
+    const handleChange = event => {
+        const value = event.target.value;
+        setState(state => ({ ...state, [event.target.name]: value }));
+    };
 
     const handleSubmit = event => {
+        // console.log('A diet was submitted: ' + state.diet);
+        // console.log('A dishtype was submitted: ' + state.dishtype);
+        // console.log('A main ingredient was submitted: ' + state.main);
+        props.actionProvider.getFormMeal(state.diet, state.dishtype, state.main);
         event.preventDefault();
-        // PerhtmlForm some action with the htmlForm data
     };
-
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h2>Diet</h2>
                 <div className="group">
-                    <ul id="filter1" className="filter-switch inline-flex items-center relative h-10 p-1 space-x-1 bg-gray-200 rounded-md font-semibold text-blue-600 my-4">
-                        <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" id="all" name="diet" value="All" onClick={e => handleSelect(e)} className="sr-only" defaultChecked />
-                            <label htmlFor="all" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                    <ul id="diet" class="filter-switch inline-flex items-center relative h-10 p-1 space-x-1 bg-gray-200 rounded-md font-semibold text-blue-600 my-4">
+                        <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+                            <input type="radio" name="diet" id="diet-all" class="sr-only" value={"all"} onChange={handleChange} defaultChecked />
+                            <label for="diet-all" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
                                 All
                             </label>
-                            <div aria-hidden="true" className="filter-active"></div>
+                            <div aria-hidden="true" class="filter-active"></div>
                         </li>
-                        <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" id="vegan" name="diet" value="Vegan" onClick={handleSelect} className="sr-only" />
-                            <label htmlFor="vegan" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                        <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+                            <input type="radio" name="diet" id="diet-vegan" class="sr-only" value={"vegan"} onChange={handleChange} />
+                            <label for="diet-vegan" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
                                 Vegan
                             </label>
                         </li>
-                        <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" id="veggie" name="diet" value="Vegetarian" onClick={handleSelect} className="sr-only" />
-                            <label htmlFor="veggie" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                        <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+                            <input type="radio" name="diet" id="diet-vegetarian" class="sr-only" value={"vegetarian"} onChange={handleChange} />
+                            <label for="diet-vegetarian" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
                                 Vegetarian
                             </label>
                         </li>
@@ -54,79 +47,79 @@ const MealForm = () => {
                 </div>
                 <h2>Type of dish</h2>
                 <div className="group">
-                    <ul id="filter2" className="filter-switch inline-flex items-center relative h-10 p-1 space-x-1 bg-gray-200 rounded-md font-semibold text-blue-600 my-4">
-                        <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" name="dish" id="all" value="All" className="sr-only" onClick={e => handleSelect(e)} defaultChecked />
-                            <label htmlFor="all" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
-                                All
-                            </label>
-                            <div aria-hidden="true" className="filter-active"></div>
-                        </li>
-                        <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" name="dish" id="starter" value="Starter" onClick={e => handleSelect(e)} className="sr-only" />
-                            <label htmlFor="starter" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
-                                Starter
-                            </label>
-                        </li>
-                        <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" name="dish" id="breakfast" value="Breakfast" onClick={e => handleSelect(e)} className="sr-only" />
-                            <label htmlFor="breakfast" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
-                                Breakfast
-                            </label>
-                        </li>
-                        <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" name="dish" id="meal" value="Meal" onClick={e => handleSelect(e)} className="sr-only" />
-                            <label htmlFor="meal" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
-                                Meal
-                            </label>
-                        </li>
-                        <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" name="dish" id="dessert" value="Dessert" onClick={e => handleSelect(e)} className="sr-only" />
-                            <label htmlFor="dessert" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
-                                Dessert
-                            </label>
-                        </li>
-                    </ul>
-                </div>
-                <h2>Main Ingredient</h2>
-                <div className="group">
-                    <ul id="filter3" className="filter-switch inline-flex items-center relative h-10 p-1 space-x-1 bg-gray-200 rounded-md font-semibold text-blue-600 my-4">
-                        <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" name="mainIngredient" id="all" value="All" className="sr-only" onClick={e => handleSelect(e)} defaultChecked />
-                            <label htmlFor="all" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
-                                All
-                            </label>
-                            <div aria-hidden="true" className="filter-active"></div>
-                        </li>
-                        <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" name="mainIngredient" id="beef" value="Beef" onClick={e => handleSelect(e)} className="sr-only" />
-                            <label htmlFor="beef" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
-                                Beef
-                            </label>
-                        </li>
-                        <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="chicken" name="mainIngredient" id="chicken" value="Chicken" onClick={e => handleSelect(e)} className="sr-only" />
-                            <label htmlFor="chicken" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
-                                Chicken
-                            </label>
-                        </li>
-                        <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" name="mainIngredient" id="chicken" value="Chicken" onClick={e => handleSelect(e)} className="sr-only" />
-                            <label htmlFor="chicken" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
-                                Pork
-                            </label>
-                        </li>
-                        <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" name="mainIngredient" id="pasta" value="Pasta" onClick={e => handleSelect(e)} className="sr-only" />
-                            <label htmlFor="pasta" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
-                                Pasta
-                            </label>
-                        </li>
-                    </ul>
-                </div>
-                <button type="submit" onClick={handleSubmit} className="opening-option-button">Submit</button>
-            </form>
-        </div>
+                    <ul id="dishtype" class="filter-switch inline-flex items-center relative h-10 p-1 space-x-1 bg-gray-200 rounded-md font-semibold text-blue-600 my-4">
+                    <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+                        <input type="radio" name="dishtype" id="dishtype-all" class="sr-only" value={"all"} onChange={handleChange} defaultChecked />
+                        <label for="dishtype-all" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                            All
+                        </label>
+                        <div aria-hidden="true" class="filter-active"></div>
+                    </li>
+                    <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+                        <input type="radio" name="dishtype" id="dishtype-starter" class="sr-only" value={"starter"} onChange={handleChange} />
+                        <label for="dishtype-starter" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                            Starter
+                        </label>
+                    </li>
+                    <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+                        <input type="radio" name="dishtype" id="dishtype-breakfast" class="sr-only" value={"breakfast"} onChange={handleChange} />
+                        <label for="dishtype-breakfast" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                            Breakfast
+                        </label>
+                    </li>
+                    <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+                        <input type="radio" name="dishtype" id="dishtype-meal" class="sr-only" value={"meal"} onChange={handleChange} />
+                        <label for="dishtype-meal" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                            Meal
+                        </label>
+                    </li>
+                    <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+                        <input type="radio" name="dishtype" id="dishtype-dessert" class="sr-only" value={"dessert"} onChange={handleChange} />
+                        <label for="dishtype-dessert" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                            Dessert
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <h2>Main Ingredient</h2>
+            <div className="group">
+                    <ul id="main" class="filter-switch inline-flex items-center relative h-10 p-1 space-x-1 bg-gray-200 rounded-md font-semibold text-blue-600 my-4">
+                    <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+                        <input type="radio" name="main" id="main-all" class="sr-only" value={"all"} onChange={handleChange} defaultChecked />
+                        <label for="main-all" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                            All
+                        </label>
+                        <div aria-hidden="true" class="filter-active"></div>
+                    </li>
+                    <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+                        <input type="radio" name="main" id="main-beef" class="sr-only" value={"beef"} onChange={handleChange} />
+                        <label for="main-beef" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                            Beef
+                        </label>
+                    </li>
+                    <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+                        <input type="radio" name="main" id="main-chicken" class="sr-only" value={"chicken"} onChange={handleChange} />
+                        <label for="main-chicken" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                            Chicken
+                        </label>
+                    </li>
+                    <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+                        <input type="radio" name="main" id="main-pork" class="sr-only" value={"pork"} onChange={handleChange} />
+                        <label for="main-pork" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                            Pork
+                        </label>
+                    </li>
+                    <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+                        <input type="radio" name="main" id="main-pasta" class="sr-only" value={"pasta"} onChange={handleChange} />
+                        <label for="main-pasta" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                            Pasta
+                        </label>
+                    </li>
+                </ul>
+            </div>
+                <button type="submit" className="opening-option-button">Submit</button>
+            </form >
+        </div >
     );
 };
 

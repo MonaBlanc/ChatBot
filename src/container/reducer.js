@@ -23,6 +23,14 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
             };
+        case actionType.GET_FORM_MEAL_SUCCESS:
+            return {
+                ...state,
+            };
+        case actionType.GET_FORM_MEAL_FAIL:
+            return {
+                ...state,
+            };
         default:
             return state;
     }
