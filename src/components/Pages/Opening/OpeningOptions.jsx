@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, setState } from "react";
 import "./OpeningOptions.css"
 
 const OpeningOptions = (props) => {
@@ -8,10 +8,11 @@ const OpeningOptions = (props) => {
       handler: props.actionProvider.goToFridge,
       id: 1,
     },
-    { 
-      text: "I have something in mind", 
-      handler: props.actionProvider.getInitForm, 
-      id: 2, },
+    {
+      text: "I have something in mind",
+      handler: props.actionProvider.getInitForm,
+      id: 2,
+    },
     {
       text: "I have no idea",
       handler: props.actionProvider.getRandomMeal,
@@ -29,7 +30,9 @@ const OpeningOptions = (props) => {
       {option.text}
     </button>
   ));
-
+  useEffect(() => {
+    setState(state => ({ ...state, mascotte: "opening" }))
+  })
   return <div className="opening-options-container">{optionsMarkup}</div>;
 };
 

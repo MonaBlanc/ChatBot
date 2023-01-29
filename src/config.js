@@ -20,6 +20,7 @@ const config = {
     diet: "",
     dishtype: "",
     main: "",
+    mascot: ""
   },
   widgets: [
     {

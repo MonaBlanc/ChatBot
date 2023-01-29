@@ -16,8 +16,10 @@ const MealForm = (props) => {
         // console.log('A dishtype was submitted: ' + state.dishtype);
         // console.log('A main ingredient was submitted: ' + state.main);
         props.actionProvider.getFormMeal(state.diet, state.dishtype, state.main);
+        setState(state => ({ ...state, mascotte: "form" }))
         event.preventDefault();
     };
+
     return (
         <div>
             <form onSubmit={handleSubmit}>
