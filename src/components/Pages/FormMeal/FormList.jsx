@@ -20,7 +20,7 @@ const FormList = (props) => {
                 setState(state => ({ ...state, meal: data.meals[0] }))
             }).catch(error => {
                 alert(error);
-            });
+            }); // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [state.diet, state.dishtype, state.main])
     return (
         <>
