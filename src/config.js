@@ -1,11 +1,11 @@
 import { createChatBotMessage } from 'react-chatbot-kit';
-import LinkList from './components/LinkList/LinkList';
-import OpeningOptions from './components/Opening/OpeningOptions';
-import RandomList from './components/RandomMeal/RandomList';
-import Recipe from './components/Recipe/Recipe';
-import Validation from './components/Validation/Validation';
-import MealForm from './components/MealForm/MealForm';
-import FormList from './components/FormMeal/FormList';
+import LinkList from './components/Pages/LinkList/LinkList';
+import OpeningOptions from './components/Pages/Opening/OpeningOptions';
+import RandomList from './components/Pages/RandomMeal/RandomList';
+import Recipe from './components/Pages/Recipe/Recipe';
+import Validation from './components/Pages/Validation/Validation';
+import MealForm from './components/Pages/MealForm/MealForm';
+import FormList from './components/Pages/FormMeal/FormList';
 
 
 const config = {

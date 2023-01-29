@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./LinkList.css";
-import "../../assets/css/Chefbot.css";
+import "../Chefbot/Chefbot.css";
 
 
 const LinkList = (props) => {

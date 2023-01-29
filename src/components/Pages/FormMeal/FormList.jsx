@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./FormList.css";
-import "../../assets/css/Chefbot.css";
+import "../Chefbot/Chefbot.css";
 import { useDispatch } from 'react-redux';
-import { getFormMealAction } from '../../container/actions';
+import { getFormMealAction } from '../../../container/actions';
 
 
 const FormList = (props) => {
@@ -21,20 +21,18 @@ const FormList = (props) => {
             }).catch(error => {
                 alert(error);
             });
-    }, [])
+    }, [state.diet, state.dishtype, state.main])
     return (
         <>
             {
-                <div className="infos row">
+                <div className="infos row columns">
                     <div className="columns seven">
-                        <h3 className="text-xl text-orange">{meal.strMeal}</h3>
+                        <h3 className="text-xl">{meal.strMeal}</h3>
                     </div>
-                    <div className="columns five">
-                        <img src={meal.strMealThumb} />
-                        {meal.strCategory ? <p><strong>Category:</strong> {meal.strCategory}</p> : ''}
-                        {meal.strArea ? <p><strong>Area:</strong> {meal.strArea}</p> : ''}
-                        {meal.strTags ? <p><strong>Tags:</strong> {meal.strTags.split(',').join(', ')}</p> : ''}
-                    </div>
+                    <img src={meal.strMealThumb} alt="img-thumb" class="img-thumb" />
+                    {meal.strCategory ? <p id="mealName"><strong>Category:</strong> {meal.strCategory}</p> : ''}
+                    {meal.strArea ? <p id="mealArea"><strong>Area:</strong> {meal.strArea}</p> : ''}
+                    {meal.strTags ? <p id="mealTag"><strong>Tags:</strong> {meal.strTags.split(',').join(', ')}</p> : ''}
                 </div>
             }
         </>
