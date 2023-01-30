@@ -1,13 +1,10 @@
 import "./Recipe.css";
-import React, { useEffect, setState } from "react";
+import React from "react";
 import extractIngredients from "./extractIngredients";
 
 const Recipe = (props) => {
     const meal = props.meal;
     const ingredients = extractIngredients(meal);
-    useEffect(() => {
-        setState(state => ({ ...state, mascotte: "recipe" }));
-    }, [])
     return (
         <>
             {
