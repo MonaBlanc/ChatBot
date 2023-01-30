@@ -8,10 +8,11 @@ const OpeningOptions = (props) => {
       handler: props.actionProvider.goToFridge,
       id: 1,
     },
-    { 
-      text: "I have something in mind", 
-      handler: props.actionProvider.getInitForm, 
-      id: 2, },
+    {
+      text: "I have something in mind",
+      handler: props.actionProvider.getInitForm,
+      id: 2,
+    },
     {
       text: "I have no idea",
       handler: props.actionProvider.getRandomMeal,
@@ -29,7 +30,6 @@ const OpeningOptions = (props) => {
       {option.text}
     </button>
   ));
-
   return <div className="opening-options-container">{optionsMarkup}</div>;
 };
 
