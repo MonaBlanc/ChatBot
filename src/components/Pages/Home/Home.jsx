@@ -57,7 +57,7 @@ export default function Home() {
                                             <RestaurantMenuRoundedIcon />
                                         </div>
                                         <div className="flex-grow pl-4">
-                                            <h2 className="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Step 3: <span className="text-gray-700 text-md">Pick your poison</span></h2>
+                                            <h2 className="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Step 3: <span className="text-gray-700 text-md">Pick your meal</span></h2>
                                             <p className="leading-relaxed">Today feels more like a salad day? Or you want to go barbecue? Chiefbot will have the perfect recipe for you based on what you have in your fridge!</p>
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <img src={require('../../../assets/img/bot.png')} alt="bot" className="w-1/4 h-3/4 mx-auto md:mt-0 mt-12" />
+                                <img src={require('../../../assets/img/happy-catto.png')} alt="bot" className="w-1/4 h-2/4 mx-auto mt-24" />
                             </div>
                         </div>
                     </section>
