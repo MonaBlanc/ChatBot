@@ -20,13 +20,13 @@ const config = {
     diet: "",
     dishtype: "",
     main: "",
-    mascot: ""
+    // mascot: ""
   },
   widgets: [
     {
       widgetName: "OpeningOptions",
       widgetFunc: (props) => <OpeningOptions {...props} />,
-      mapStateToProps: ["chatState"],
+      // mapStateToProps: ["mascot"],
     },
     {
       widgetName: "menuListAPI",
@@ -72,7 +72,7 @@ const config = {
     },
     chatButton: {
       backgroundColor: "#376B7E",
-    },
+    }
   },
 }
 

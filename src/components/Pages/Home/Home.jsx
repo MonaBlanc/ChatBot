@@ -17,8 +17,8 @@ export default function Home() {
                 <Slider />
                 <section id="presentation" className='text-center'>
                     <h2 className='text-3xl text-orange mb-4'>ChefBot, your new Sous-chef!</h2>
-                    <p>ChefBot is an intelligent chatbot that will help you find the perfect meal for your cravings!</p>
-                    <p>Scroll below to see some of the cool features of ChiefBot.</p>
+                    <p>ChefBot is an intelligent chatbot that will help you find the perfect meal for you!</p>
+                    <p>Scroll below to see some of Chefbot's cool features.</p>
                     <section className="text-gray-600 body-font">
                         <div className="container px-5 py-24 mx-auto flex flex-wrap">
                             <div className="flex flex-wrap w-full">
@@ -34,7 +34,7 @@ export default function Home() {
                                         </div>
                                         <div className="flex-grow pl-4">
                                             <h2 className="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Step 1: <span className="text-gray-700 text-md">Create your account!</span></h2>
-                                            <p className="leading-relaxed">Create a new account to let Chiefbot remember your preferences!</p>
+                                            <p className="leading-relaxed">Create a new account to let Chefbot remember your preferences!</p>
                                         </div>
                                     </div>
                                     <div className="flex relative pb-12">
@@ -46,7 +46,7 @@ export default function Home() {
                                         </div>
                                         <div className="flex-grow pl-4">
                                             <h2 className="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Step 2: <span className="text-gray-700 text-md">Fill your fridge</span></h2>
-                                            <p className="leading-relaxed">With the help of Chiefbot create a virtual copy of your real fridge!</p>
+                                            <p className="leading-relaxed">With the help of Chefbot create a virtual copy of your real fridge!</p>
                                         </div>
                                     </div>
                                     <div className="flex relative pb-12">
@@ -58,7 +58,7 @@ export default function Home() {
                                         </div>
                                         <div className="flex-grow pl-4">
                                             <h2 className="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Step 3: <span className="text-gray-700 text-md">Pick your meal</span></h2>
-                                            <p className="leading-relaxed">Today feels more like a salad day? Or you want to go barbecue? Chiefbot will have the perfect recipe for you based on what you have in your fridge!</p>
+                                            <p className="leading-relaxed">Today feels more like a salad day? Or you want something sweet? Chefbot will have the perfect recipe for you based on what you have in your fridge!</p>
                                         </div>
                                     </div>
                                     <div className="flex relative pb-12">
@@ -70,7 +70,7 @@ export default function Home() {
                                         </div>
                                         <div className="flex-grow pl-4">
                                             <h2 className="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Step 4: <span className="text-gray-700 text-md">Try new things!</span></h2>
-                                            <p className="leading-relaxed">If you're down to go do some groceries, Chiefbot will help you make a list of what you need to try a new meal of your taste!</p>
+                                            <p className="leading-relaxed">If you're down to go do some groceries, Chefbot will help you make a list of what you need to try a new meal of your taste!</p>
                                         </div>
                                     </div>
                                     <div className="flex relative">
@@ -82,7 +82,7 @@ export default function Home() {
                                         </div>
                                         <div className="flex-grow pl-4">
                                             <h2 className="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Last Step: <span className="text-gray-700 text-md">Bots can't cook!</span></h2>
-                                            <p className="leading-relaxed">Once your next meal has been choosen, Chiefbot will stay beside you all the way along the cooking journey with tips and instructions!</p>
+                                            <p className="leading-relaxed">Once your next meal has been choosen, Chefbot will stay beside you all the way along the cooking journey with tips and instructions!</p>
                                         </div>
                                     </div>
                                 </div>
