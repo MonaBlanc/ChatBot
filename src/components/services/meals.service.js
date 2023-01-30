@@ -24,25 +24,23 @@ const getFormMeal = (diet, dishtype, main) => {
     if (diet === "all") {
         filter += "";
     }
-    else{
+    else {
         filter += diet;
     }
     if (dishtype === "all") {
         filter += "";
     }
-    else{
+    else {
         filter += dishtype;
     }
     if (main === "all") {
         filter += "";
     }
-    else{
+    else {
         filter += main;
     }
-    console.log(filter);
-    console.log(`https://www.themealdb.com/api/json/v1/1/random.php/filter.php?c=${filter}`);
-
-
+    // console.log(filter);
+    // console.log(`https://www.themealdb.com/api/json/v1/1/random.php/filter.php?c=${filter}`);
     return axios.get(`https://www.themealdb.com/api/json/v1/1/random.php/filter.php?c=${filter}`)
         .then(response => {
             if (response) {

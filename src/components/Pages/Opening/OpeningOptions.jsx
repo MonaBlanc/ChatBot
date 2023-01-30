@@ -1,4 +1,4 @@
-import React, { useEffect, setState } from "react";
+import React from "react";
 import "./OpeningOptions.css"
 
 const OpeningOptions = (props) => {
@@ -30,9 +30,6 @@ const OpeningOptions = (props) => {
       {option.text}
     </button>
   ));
-  useEffect(() => {
-    setState(state => ({ ...state, mascotte: "opening" }))
-  })
   return <div className="opening-options-container">{optionsMarkup}</div>;
 };
 

@@ -14,8 +14,8 @@ const RandomList = (props) => {
         random
             .then(data => {
                 setMeal(data.meals[0]);
-                setState(state => ({ ...state, meal: data.meals[0], mascotte: "meal" }))
-            }).catch( error => {
+                setState(state => ({ ...state, meal: data.meals[0] }))
+            }).catch(error => {
                 alert(error);
             }); // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])

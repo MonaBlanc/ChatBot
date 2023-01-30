@@ -7,7 +7,7 @@ const Recipe = (props) => {
     const ingredients = extractIngredients(meal);
     useEffect(() => {
         setState(state => ({ ...state, mascotte: "recipe" }));
-    })
+    }, [])
     return (
         <>
             {
