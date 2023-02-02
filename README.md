@@ -2,7 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The Group is composed of Steven, Faly, Ayoub and Kimberley.
+The Group is composed of Ayoub and Kimberley.
+
+## \#Semestre n°7:
+Réalisables :
+    • form filter with generation
+    • random meal generation 
+    
+## \#Semestre n°8:
+Réalisables :
+    • MERN App
 
 ## \#Rendu n°1:
 First draft available with 2 main features:
