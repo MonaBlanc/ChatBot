@@ -4,7 +4,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The Group is composed of Ayoub and Kimberley.
+The Developer team is composed of Ayoub and Kimberley.
 
 ## \#7th Semester:
 Actions done:
