@@ -13,9 +13,9 @@ const FormList = (props) => {
     useEffect(() => {
         const random = dispatch(getFormMealAction(state.diet, state.dishtype, state.main));
         random
-            .then(data => {
-                setMeal(data.meals[0]);
-                setState(state => ({ ...state, meal: data.meals[0] }))
+            .then(meal => {
+                setMeal(meal);
+                setState(state => ({ ...state, meal}))
             }).catch(error => {
                 alert(error);
             }); // eslint-disable-next-line react-hooks/exhaustive-deps

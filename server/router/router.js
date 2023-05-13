@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const controller = require('../controllers/controller');
 
-router.post('/', controller.home);
-router.post('/chatbot', controller.chatbot);
+router.get('/random', controller.randomMeal);
+router.get('/formMeal', controller.formMeal);
 
 
 module.exports = router;
