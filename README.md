@@ -1,19 +1,21 @@
+<img src="https://i.postimg.cc/P5JQT7hc/Frame-3.png"  height= 60%>
+
 # Getting Started with the ChatBot App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The Group is composed of Ayoub and Kimberley.
+The Developer team is composed of Ayoub and Kimberley.
 
-## \#Semestre n°7:
-Réalisables :
+## \#7th Semester:
+Actions done:
     • form filter with generation
     • random meal generation 
     
-## \#Semestre n°8:
-Réalisables :
-    • MERN App
+## \#8th Semester:
+Actions to do:
+    • MERN App structure
 
-## \#Rendu n°1:
+## \#First Delivery:
 First draft available with 2 main features:
     • Landing page
     • random meal generation 
@@ -30,7 +32,7 @@ Install the CodeMetrics Add-on via [VSCodeMarketplace](https://marketplace.visua
 
 Once in the project do `Ctrl + Maj + P` in order to open the command palette and type "Toggle Code Metrics" to generate the code metrics that will be displayed in each files with a comment.
 
-![Metrics](public\Metrics.PNG)
+![Metrics](https://github.com/MonaBlanc/ChatBot/blob/master/public/Metrics.PNG?raw=true)
 
 ### Calculating coverage & Unit Testing
 
@@ -38,7 +40,7 @@ Using [Jest](https://jestjs.io/) we can do unit test and then calculate coverage
 
 ### UML Diagram
 
-![Diagram](public\Diagram.png)
+![Diagram](https://github.com/MonaBlanc/ChatBot/blob/master/public/Diagram.png?raw=true)
 
 ## Available Scripts
 
