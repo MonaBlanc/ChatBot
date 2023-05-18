@@ -339,7 +339,7 @@
     "@aws-sdk/types" "3.215.0"
     "tslib" "^2.3.1"
 
-"@aws-sdk/credential-providers@^3.186.0":
+"@aws-sdk/credential-providers@^3.186.0", "@aws-sdk/credential-providers@^3.201.0":
   "integrity" "sha512-zANE0/EKNd/H4+6pMLVbgFVpE8L6MOXr5FlFuGNxcQhSynmxHDrbop0dV5kxcaeW3D7Cp70SgQxBfOiea5ZF8w=="
   "resolved" "https://registry.npmjs.org/@aws-sdk/credential-providers/-/credential-providers-3.216.0.tgz"
   "version" "3.216.0"
@@ -3977,6 +3977,11 @@
   dependencies:
     "buffer" "^5.6.0"
 
+"bson@^5.3.0":
+  "integrity" "sha512-ukmCZMneMlaC5ebPHXIkP8YJzNl5DC41N5MAIvKDqLggdao342t4McltoJBQfQya/nHBWAcSsYRqlXPoQkTJag=="
+  "resolved" "https://registry.npmjs.org/bson/-/bson-5.3.0.tgz"
+  "version" "5.3.0"
+
 "buffer-from@^1.0.0":
   "integrity" "sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ=="
   "resolved" "https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.2.tgz"
@@ -7605,24 +7610,23 @@
   dependencies:
     "minimist" "^1.2.6"
 
-"mongodb-connection-string-url@^2.5.4":
-  "integrity" "sha512-SeAxuWs0ez3iI3vvmLk/j2y+zHwigTDKQhtdxTgt5ZCOQQS5+HW4g45/Xw5vzzbn7oQXCNQ24Z40AkJsizEy7w=="
-  "resolved" "https://registry.npmjs.org/mongodb-connection-string-url/-/mongodb-connection-string-url-2.5.4.tgz"
-  "version" "2.5.4"
+"mongodb-connection-string-url@^2.5.4", "mongodb-connection-string-url@^2.6.0":
+  "integrity" "sha512-WvTZlI9ab0QYtTYnuMLgobULWhokRjtC7db9LtcVfJ+Hsnyr5eo6ZtNAt3Ly24XZScGMelOcGtm7lSn0332tPQ=="
+  "resolved" "https://registry.npmjs.org/mongodb-connection-string-url/-/mongodb-connection-string-url-2.6.0.tgz"
+  "version" "2.6.0"
   dependencies:
     "@types/whatwg-url" "^8.2.1"
     "whatwg-url" "^11.0.0"
 
-"mongodb@^4.11.0":
-  "integrity" "sha512-koT87tecZmxPKtxRQD8hCKfn+ockEL2xBiUvx3isQGI6mFmagWt4f4AyCE9J4sKepnLhMacoCTQQA6SLAI2L6w=="
-  "resolved" "https://registry.npmjs.org/mongodb/-/mongodb-4.12.1.tgz"
-  "version" "4.12.1"
+"mongodb@^5.5.0":
+  "integrity" "sha512-XgrkUgAAdfnZKQfk5AsYL8j7O99WHd4YXPxYxnh8dZxD+ekYWFRA3JktUsBnfg+455Smf75/+asoU/YLwNGoQQ=="
+  "resolved" "https://registry.npmjs.org/mongodb/-/mongodb-5.5.0.tgz"
+  "version" "5.5.0"
   dependencies:
-    "bson" "^4.7.0"
-    "mongodb-connection-string-url" "^2.5.4"
+    "bson" "^5.3.0"
+    "mongodb-connection-string-url" "^2.6.0"
     "socks" "^2.7.1"
   optionalDependencies:
-    "@aws-sdk/credential-providers" "^3.186.0"
     "saslprep" "^1.0.3"
 
 "mongodb@4.11.0":

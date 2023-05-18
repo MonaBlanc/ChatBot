@@ -1,5 +1,5 @@
 const express = require('express');
-// const connectDB = require('./database/connection');
+const connectDB = require('./database/connection');
 const cors = require('cors');
 
 require('dotenv').config({ path: "./.env" });
@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 // database connection
-//connectDB();
+connectDB();
 
 // routes
 app.use('/api', require('./router/router'));

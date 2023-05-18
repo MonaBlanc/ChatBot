@@ -8,9 +8,7 @@ const getRandomMeal = (newUser) => {
     // return axios.get(`https://www.themealdb.com/api/json/v1/1/random.php`)
     return axios.get(`${baseURL}/random`)
         .then(response => {
-            if (response) {
-                return Promise.resolve(response);
-            }
+            return Promise.resolve(response);
         })
         .catch(error => {
             return Promise.reject(error.response);
