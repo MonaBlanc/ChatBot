@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom';
 
 export default function Header() {
@@ -11,9 +10,11 @@ export default function Header() {
                     <img className="w-32" src={require('../../../assets/img/logo.png')} alt="logo" />
                 </Link>
                 <Link to="/" className="hover:text-gray-600">Home</Link>
-                <Link to="#" className="text-orange hover:text-lightOrange">Fridge Icon</Link>
+                <Link to="/chefbot" className="text-orange hover:text-lightOrange">
+                    <img width="60" height="60" src="images/chat.png" alt="filled-chat"/>
+                </Link>
                 <Link to="#" className="hover:text-gray-600">Help</Link>
-                <button className="inline-flex items-center bg-orange border-0 py-1 px-3 focus:outline-none hover:bg-lightOrange rounded text-white">My Account
+                <button className="inline-flex items-center bg-orange border-0 py-1 px-3 focus:outline-none hover:bg-lightOrange rounded text-white">Grocery List
                 </button>
             </nav>
         </header >

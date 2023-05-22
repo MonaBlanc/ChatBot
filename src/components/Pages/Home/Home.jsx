@@ -1,16 +1,15 @@
-import React from 'react';
-import Header from '../molecules/Header';
-import Footer from '../molecules/Footer';
-import Hero from '../molecules/Hero';
-import Slider from '../molecules/Slider';
 import AddIcon from '@mui/icons-material/Add';
 import KitchenRoundedIcon from '@mui/icons-material/KitchenRounded';
-import RestaurantMenuRoundedIcon from '@mui/icons-material/RestaurantMenuRounded';
 import LocalGroceryStoreRoundedIcon from '@mui/icons-material/LocalGroceryStoreRounded';
+import RestaurantMenuRoundedIcon from '@mui/icons-material/RestaurantMenuRounded';
+import Footer from '../molecules/Footer';
+import Header from '../molecules/Header';
+import Hero from '../molecules/Hero';
+import Slider from '../molecules/Slider';
 
 export default function Home() {
     return (
-        <div id="bg" className='bg-eggshell'>
+        <div id="bg">
             <Header />
             <main id="site-main">
                 <Hero />
