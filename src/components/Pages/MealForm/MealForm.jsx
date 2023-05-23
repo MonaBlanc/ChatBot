@@ -26,7 +26,7 @@ const MealForm = (props) => {
           <ul id="diet">
             <li>
                 <div class="optionIcon">
-                  <input type="radio" name="category" id="diet-vegan" value={"vegan"} onChange={handleChange}  />
+                  <input type="radio" name="diet" id="diet-vegan" value={"vegan"} onChange={handleChange}  />
                   <img src="images/vegan.png" alt="vegan" />
                 </div> 
                 <label htmlFor="diet-vegan">
@@ -35,14 +35,14 @@ const MealForm = (props) => {
             </li>
             <li>
               <div class="optionIcon">
-                <input type="radio" name="category" id="diet-vegetarian" value={"vegetarian"} onChange={handleChange} />
+                <input type="radio" name="diet" id="diet-vegetarian" value={"vegetarian"} onChange={handleChange} />
                 <img src="images/vege.png" alt="vevegetariangan" />
               </div>
               <label htmlFor="diet-vegetarian">Vegetarian</label>
             </li>
             <li>
               <div class="optionIcon">
-                <input type="radio" name="category" id="diet-all" value={"all"} onChange={handleChange} defaultChecked />
+                <input type="radio" name="diet" id="diet-all" value={"all"} onChange={handleChange} defaultChecked />
                 <img src="images/none.png" alt="all" />
               </div>
               <label htmlFor="diet-all">None</label>
@@ -54,35 +54,35 @@ const MealForm = (props) => {
           <ul id="dishtype" >
             <li>
               <div class="optionIcon">
-                <input type="radio" name="category" id="dishtype-breakfast" value={"breakfast"} onChange={handleChange} />
+                <input type="radio" name="dishtype" id="dishtype-breakfast" value={"breakfast"} onChange={handleChange} />
                 <img src="images/breakfast.png" alt="breakfast" />
               </div>
               <label htmlFor="dishtype-breakfast">Breakfast</label>
             </li>
             <li>
               <div class="optionIcon">
-                <input type="radio" name="category" id="dishtype-starter" value={"starter"} onChange={handleChange} />
+                <input type="radio" name="dishtype" id="dishtype-starter" value={"starter"} onChange={handleChange} />
                 <img src="images/starter.png" alt="starter" />
               </div>
               <label htmlFor="dishtype-starter">Starter</label>
             </li>
             <li>
               <div class="optionIcon">
-                <input type="radio" name="category" id="dishtype-meal" value={"meal"} onChange={handleChange} />
+                <input type="radio" name="dishtype" id="dishtype-meal" value={"meal"} onChange={handleChange} />
                 <img src="images/meal.png" alt="meal" />
               </div>
               <label htmlFor="dishtype-meal">Meal</label>
             </li>
             <li>
               <div class="optionIcon">
-                <input type="radio" name="category" id="dishtype-dessert" value={"dessert"} onChange={handleChange} />
+                <input type="radio" name="dishtype" id="dishtype-dessert" value={"dessert"} onChange={handleChange} />
                 <img src="images/dessert.png" alt="dessert" />
               </div>
               <label htmlFor="dishtype-dessert">Dessert</label>
             </li>
             <li>
               <div class="optionIcon">
-                <input type="radio" name="category" id="dishtype-all"  value={"all"} onChange={handleChange} defaultChecked />
+                <input type="radio" name="dishtype" id="dishtype-all"  value={"all"} onChange={handleChange} defaultChecked />
                 <img src="images/none.png" alt="all" />
               </div>
               <label htmlFor="dishtype-all">All</label>
