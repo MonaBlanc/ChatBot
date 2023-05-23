@@ -1,0 +1,85 @@
+
+.grocery-list {
+    background-color: #ff770059;
+	width: 300px;
+	min-height: 30vh;
+	padding: 10px;
+	position: relative;
+	margin: 10px 0 0 50px;
+	border-radius: 20px;
+}
+
+.grocery-list h3 {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.grocery-list .checkList {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    margin-top: 1em;
+}
+
+.grocery-list input[type="checkbox"] {
+    appearance: none;
+    background-color: transparent;
+    font: inherit;
+    color: #FF7500;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid #FF7500;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+
+}
+
+.grocery-list input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #ff7700ae;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.grocery-list input[type="checkbox"]:checked::before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.grocery-list input[type="checkbox"]:not(:checked) {
+    opacity: 0.5;
+}
+
+.grocery-list input[type="checkbox"]:not(:checked) + label{
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.grocery-list label{
+    color: black;
+}
+
+.grocery-list .opening-option-button{
+    margin-top: 0.8em;
+    font-size: 0.8em;
+    display: flex;
+    margin: 0 auto;
+    border: 1px solid #FF7500;
+}
+  
+.grocery-list .opening-option-button:hover {
+    transition: 0.5s;
+    color: #fff;
+    background: #FF7500;
+    margin: 0 auto;
+}
+  

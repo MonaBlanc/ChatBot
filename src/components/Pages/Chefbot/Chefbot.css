@@ -64,7 +64,7 @@
   border-radius: 50%;
   font-size: 1.2rem;
   margin-right: 12.5px;
-  background-color: #FFF5E4;
+  background-color: #FFF;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,7 +77,7 @@
 }
 
 .react-chatbot-kit-chat-bot-avatar-letter {
-  color: #E14D2A;
+  color: #FD841F;
   margin: 0;
   padding: 0;
 }

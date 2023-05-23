@@ -1,6 +1,5 @@
+import extractIngredients from "../GroceryList/extractIngredients";
 import "./Recipe.css";
-import React from "react";
-import extractIngredients from "./extractIngredients";
 
 const Recipe = (props) => {
     const meal = props.meal;
