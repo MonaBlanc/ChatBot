@@ -17,3 +17,72 @@
   border: 1px solid #FF7500;
   margin: 3px;
 }
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #E14D2A;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  text-align: center;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.optionIcon {
+  background-color: #E14D2A;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+}
+
+.optionIcon img {
+  width: 60%;
+  height: 60%;
+  position: relative;
+  margin: auto;
+
+}
+
+.optionIcon:hover {
+  background-color: #FF7500;
+}
+
+input[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* CHECKED STYLES */
+input[type=radio]:checked + img {
+  outline: 2px solid #FF7500;
+  border-radius: 50%;
+}
+
+
+label {
+  font-size: 0.8rem;
+  color: #E14D2A;
+}
+
+.group {
+  padding-bottom: 2rem;
+}
