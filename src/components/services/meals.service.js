@@ -1,13 +1,14 @@
 import axios from 'axios';
 
-const baseURL = "http://localhost:4000/api";
+// const baseURL = "http://localhost:4000/api";
 
 // register request
 const getRandomMeal = (newUser) => {
-    // GET request on http://localhost:8080/api/random
-    // return axios.get(`https://www.themealdb.com/api/json/v1/1/random.php`)
-    return axios.get(`${baseURL}/random`)
-        .then(response => {
+    // GET request on http://localhost:8080/api/random    
+    // return axios.get(`${baseURL}/random`)
+
+     return axios.get(`https://www.themealdb.com/api/json/v1/1/random.php`)
+     .then(response => {
             return Promise.resolve(response);
         })
         .catch(error => {
@@ -40,8 +41,9 @@ const getFormMeal = (diet, dishtype, main) => {
     }
     // console.log(filter);
     // console.log(`https://www.themealdb.com/api/json/v1/1/random.php/filter.php?c=${filter}`);
-    // return axios.get(`https://www.themealdb.com/api/json/v1/1/random.php/filter.php?c=${filter}`)
-    return axios.get(`${baseURL}/formMeal`, {params: {filter}})    
+        // return axios.get(`${baseURL}/formMeal`, {params: {filter}})    
+
+    return axios.get(`https://www.themealdb.com/api/json/v1/1/random.php/filter.php?c=${filter}`)
     .then(response => {
             return Promise.resolve(response);
         })
@@ -64,4 +66,5 @@ const getRecipe = (id) => {
 }
 export {
     getRandomMeal, getRecipe, getFormMeal
-}
+};
+
