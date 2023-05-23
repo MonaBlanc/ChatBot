@@ -10,14 +10,14 @@ const MealForm = (props) => {
     };
 
     const handleSubmit = event => {
-        props.actionProvider.getFormMeal(state.diet, state.dishtype, state.main);
+        props.actionProvider.getFormMeal(state.category, state.main);
         event.preventDefault();
     };
 
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <h2>Diet</h2>
+                {/* <h2>Diet</h2>
                 <div className="group">
                     <ul id="diet" className="filter-switch inline-flex items-center relative h-10 p-1 space-x-1 rounded-md font-semibold text-orange my-4">
                         <li className="filter-switch-item flex relative h-8 bg-gray-300x">
@@ -40,38 +40,38 @@ const MealForm = (props) => {
                             </label>
                         </li>
                     </ul>
-                </div>
-                <h2>Type of dish</h2>
+                </div> */}
+                <h2>Category</h2>
                 <div className="group">
-                    <ul id="dishtype" className="filter-switch inline-flex items-center relative h-10 p-1 space-x-1 rounded-md font-semibold text-orange my-4">
+                    <ul id="category" className="filter-switch inline-flex items-center relative h-10 p-1 space-x-1 rounded-md font-semibold text-orange my-4">
                         <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" name="dishtype" id="dishtype-all" className="sr-only" value={"all"} onChange={handleChange} defaultChecked />
-                            <label htmlFor="dishtype-all" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                            <input type="radio" name="category" id="category-all" className="sr-only" value={"null"} onChange={handleChange} defaultChecked />
+                            <label htmlFor="category-all" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
                                 All
                             </label>
                             <div aria-hidden="true" className="filter-active"></div>
                         </li>
                         <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" name="dishtype" id="dishtype-starter" className="sr-only" value={"starter"} onChange={handleChange} />
-                            <label htmlFor="dishtype-starter" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                            <input type="radio" name="category" id="category-starter" className="sr-only" value={"Starter"} onChange={handleChange} />
+                            <label htmlFor="category-starter" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
                                 Starter
                             </label>
                         </li>
                         <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" name="dishtype" id="dishtype-breakfast" className="sr-only" value={"breakfast"} onChange={handleChange} />
-                            <label htmlFor="dishtype-breakfast" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                            <input type="radio" name="category" id="category-breakfast" className="sr-only" value={"Breakfast"} onChange={handleChange} />
+                            <label htmlFor="category-breakfast" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
                                 Breakfast
                             </label>
                         </li>
                         <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" name="dishtype" id="dishtype-meal" className="sr-only" value={"meal"} onChange={handleChange} />
-                            <label htmlFor="dishtype-meal" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                            <input type="radio" name="category" id="category-meal" className="sr-only" value={"Meal"} onChange={handleChange} />
+                            <label htmlFor="category-meal" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
                                 Meal
                             </label>
                         </li>
                         <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" name="dishtype" id="dishtype-dessert" className="sr-only" value={"dessert"} onChange={handleChange} />
-                            <label htmlFor="dishtype-dessert" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+                            <input type="radio" name="category" id="category-dessert" className="sr-only" value={"Dessert"} onChange={handleChange} />
+                            <label htmlFor="category-dessert" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
                                 Dessert
                             </label>
                         </li>
@@ -81,7 +81,7 @@ const MealForm = (props) => {
                 <div className="group">
                     <ul id="main" className="filter-switch inline-flex items-center relative h-10 p-1 space-x-1 rounded-md font-semibold text-orange my-4">
                         <li className="filter-switch-item flex relative h-8 bg-gray-300x">
-                            <input type="radio" name="main" id="main-all" className="sr-only" value={"all"} onChange={handleChange} defaultChecked />
+                            <input type="radio" name="main" id="main-all" className="sr-only" value={"null"} onChange={handleChange} defaultChecked />
                             <label htmlFor="main-all" className="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
                                 All
                             </label>

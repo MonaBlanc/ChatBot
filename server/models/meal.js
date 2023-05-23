@@ -160,7 +160,6 @@ const meal = new mongoose.Schema({
     },
     strSource: {
       type: String,
-      required: true
     },
     strImageSource: {
       type: String
