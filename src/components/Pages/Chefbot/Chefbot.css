@@ -3,7 +3,6 @@
 }
 
 .chefbot-container{
-    background-color: var(--eggshell);
     height: 100vh;
 }
 
@@ -184,9 +183,27 @@
 
 .react-chatbot-kit-chat-message-container {
   padding: 0 17.5px 10px 17.5px;
-  overflow: scroll;
+  overflow: auto;
   height: 480px;
   margin: auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4ce8d;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E14D2A;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FD841F;
 }
 
 .react-chatbot-kit-chat-input {
