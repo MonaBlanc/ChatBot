@@ -1,7 +1,5 @@
 const axios = require('axios')
 const Meal = require('../models/meal');
-const Category = require('../models/category')
-const mongoose = require('mongoose')
 
 // Controller for random meal
 exports.randomMeal = async (req, res) => {
@@ -30,20 +28,22 @@ exports.randomMeal = async (req, res) => {
 exports.formMeal = async (req, res) => {
     const diet = req.query.diet;
     const dishtype = req.query.dishtype;
+    console.log(dishtype);
     try {
       // Build the query object based on the parameters
-      let query = {};
-  
-      if (dishtype) {
+      const query = {};
+      if (diet) {
+        query.strCategory = diet;
+      }
+      else if (dishtype) {
         query.strCategory = dishtype;
       }
-      query = { strCategory: 'Chicken' };
       // Fetch the meals from the database
-      const meal = await Meal.find(query).limit(1);
+      const data = await Meal.find(query).limit(10);
 
-    if(meal !== null){
-        console.log(meal.strMeal);
-        res.json(meal);
+    if(data !== []){
+        console.log(data.length);
+        res.json({meals: data});
     }
     else{
         try {
