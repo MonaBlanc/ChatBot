@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-
 const meal = new mongoose.Schema({
     idMeal: {
       type: Number,

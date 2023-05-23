@@ -28,48 +28,22 @@ exports.randomMeal = async (req, res) => {
 
 // Controller for form meal
 exports.formMeal = async (req, res) => {
-    const params = req.query;
-    const category = params.category;
-    const mainIngredient = params.mainIngredient;
+    const diet = req.query.diet;
+    const dishtype = req.query.dishtype;
     try {
       // Build the query object based on the parameters
-      const query = {};
+      let query = {};
   
-      if (category) {
-        query.strCategory = category;
+      if (dishtype) {
+        query.strCategory = dishtype;
       }
-  
-      if (mainIngredient) {
-        query.$or = [
-          { strIngredient1: mainIngredient },
-          { strIngredient2: mainIngredient },
-          { strIngredient3: mainIngredient },
-          { strIngredient4: mainIngredient },
-          { strIngredient5: mainIngredient },
-          { strIngredient6: mainIngredient },
-          { strIngredient7: mainIngredient },
-          { strIngredient8: mainIngredient },
-          { strIngredient9: mainIngredient },
-          { strIngredient10: mainIngredient },
-          { strIngredient11: mainIngredient },
-          { strIngredient12: mainIngredient },
-          { strIngredient13: mainIngredient },
-          { strIngredient14: mainIngredient },
-          { strIngredient15: mainIngredient },
-          { strIngredient16: mainIngredient },
-          { strIngredient17: mainIngredient },
-          { strIngredient18: mainIngredient },
-          { strIngredient19: mainIngredient },
-          { strIngredient20: mainIngredient },
-        ];
-      }
-  
+      query = { strCategory: 'Chicken' };
       // Fetch the meals from the database
-      const meals = await Meal.find(query).limit(10);
+      const meal = await Meal.find(query).limit(1);
 
-    if(meals.length !== 0){
-        console.log(meals);
-        res.json(meals);
+    if(meal !== null){
+        console.log(meal.strMeal);
+        res.json(meal);
     }
     else{
         try {
