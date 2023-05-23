@@ -1,9 +1,8 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import "./FormList.css";
-import "../Chefbot/Chefbot.css";
+import { useEffect, useState } from "react";
 import { useDispatch } from 'react-redux';
 import { getFormMealAction } from '../../../container/actions';
+import "../Chefbot/Chefbot.css";
+import "./FormList.css";
 
 
 const FormList = (props) => {
@@ -12,10 +11,9 @@ const FormList = (props) => {
     const [meal, setMeal] = useState({});
     useEffect(() => {
         const response = dispatch(getFormMealAction(state.diet, state.dishtype));
-        response
-            .then(meal => {
-                setMeal(meal);
-                setState(state => ({ ...state, meal}))
+        response.then(data => {
+            setMeal(data.meals[0]);
+            setState(state => ({ ...state, meal: data.meals[0] }))
             }).catch(error => {
                 alert(error);
             }); // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -1,11 +1,12 @@
 import { createChatBotMessage } from 'react-chatbot-kit';
+import FormList from './components/Pages/FormMeal/FormList';
+import GroceryList from './components/Pages/GroceryList/GroceryList';
 import LinkList from './components/Pages/LinkList/LinkList';
+import MealForm from './components/Pages/MealForm/MealForm';
 import OpeningOptions from './components/Pages/Opening/OpeningOptions';
 import RandomList from './components/Pages/RandomMeal/RandomList';
 import Recipe from './components/Pages/Recipe/Recipe';
 import Validation from './components/Pages/Validation/Validation';
-import MealForm from './components/Pages/MealForm/MealForm';
-import FormList from './components/Pages/FormMeal/FormList';
 
 
 const config = {
@@ -43,6 +44,11 @@ const config = {
     {
       widgetName: "recipeAPI",
       widgetFunc: (props) => <Recipe {...props} />,
+      mapStateToProps: ["meal"],
+    },
+    {
+      widgetName: "groceryList",
+      widgetFunc: (props) => <GroceryList {...props} />,
       mapStateToProps: ["meal"],
     },
     {

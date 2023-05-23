@@ -47,8 +47,15 @@ class ActionProvider {
         props: { id: id },
       }
     );
+    const groceryList = this.createChatBotMessage("You can add the ingredients to your grocery list!",
+      {
+        widget: "groceryList",
+        props: { id: id },
+      }
+    );
     this.updateChatState(userMessage);
     this.updateChatbotState(message);
+    this.updateChatbotState(groceryList);
   };
 
 

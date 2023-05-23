@@ -29,27 +29,31 @@ const MealForm = (props) => {
         <div className="group"> 
           <ul id="diet">
             <li>
-                <div className="optionIcon" onClick={(e)=>handleChange(e)}>
-                  <input type="radio" name="diet" id="diet-vegan" value={"Vegan"}   />
-                  <img src="images/vegan.png" alt="vegan" />
-                </div> 
+                <input type="radio" name="diet" id="diet-vegan" value={"vegan"} onChange={handleChange}  />
                 <label htmlFor="diet-vegan">
+                  <div class="optionIcon">
+                    <img src="images/vegan.png" alt="vegan" />
+                  </div> 
                   Vegan
                 </label>
             </li>
             <li>
-              <div className="optionIcon" onClick={(e)=>handleChange(e)}>
-                <input type="radio" name="diet" id="diet-vegetarian" value={"Vegetarian"}  />
-                <img src="images/vege.png" alt="vege" />
-              </div>
-              <label htmlFor="diet-vegetarian">Vegetarian</label>
+              <input type="radio" name="diet" id="diet-vegetarian" value={"vegetarian"} onChange={handleChange} />
+              <label htmlFor="diet-vegetarian">
+                <div class="optionIcon">
+                  <img src="images/vege.png" alt="vevegetariangan" />
+                </div>
+                Vegetarian
+              </label>
             </li>
             <li>
-              <div className="optionIcon" onClick={(e)=>handleChange(e)}>
-                <input type="radio" name="diet" id="diet-all" value={""}  defaultChecked />
-                <img src="images/none.png" alt="all" />
-              </div>
-              <label htmlFor="diet-all">None</label>
+              <input type="radio" name="diet" id="diet-all" value={"all"} onChange={handleChange} defaultChecked />
+              <label htmlFor="diet-all">
+                <div class="optionIcon">
+                  <img src="images/none.png" alt="all" />
+                </div>
+                None
+              </label>
             </li>
           </ul>
         </div>
@@ -57,39 +61,49 @@ const MealForm = (props) => {
         <div className="group">
           <ul id="dishtype" >
             <li>
-              <div className="optionIcon" onClick={(e)=>handleChange(e)}>
-                <input type="radio" name="dishtype" id="dishtype-breakfast" value={"Breakfast"}  />
-                <img src="images/breakfast.png" alt="breakfast" />
-              </div>
-              <label htmlFor="dishtype-breakfast">Breakfast</label>
+              <input type="radio" name="dishtype" id="dishtype-breakfast" value={"breakfast"} onChange={handleChange} />
+              <label htmlFor="dishtype-breakfast">
+                <div class="optionIcon">
+                  <img src="images/breakfast.png" alt="breakfast" />
+                </div>
+                Breakfast
+                </label>
             </li>
             <li>
-              <div className="optionIcon" onClick={(e)=>handleChange(e)}>
-                <input type="radio" name="dishtype" id="dishtype-starter" value={"Starter"}  />
-                <img src="images/starter.png" alt="starter" />
-              </div>
-              <label htmlFor="dishtype-starter">Starter</label>
+              <input type="radio" name="dishtype" id="dishtype-starter" value={"starter"} onChange={handleChange} />
+              <label htmlFor="dishtype-starter">
+                <div class="optionIcon">
+                  <img src="images/starter.png" alt="starter" />
+                </div>
+                Starter
+                </label>
             </li>
             <li>
-              <div className="optionIcon" onClick={(e)=>handleChange(e)}>
-                <input type="radio" name="dishtype" id="dishtype-meal" value={"Meal"}  />
-                <img src="images/meal.png" alt="meal" />
-              </div>
-              <label htmlFor="dishtype-meal">Meal</label>
+              <input type="radio" name="dishtype" id="dishtype-meal" value={"meal"} onChange={handleChange} />
+              <label htmlFor="dishtype-meal">
+                <div class="optionIcon">
+                  <img src="images/meal.png" alt="meal" />
+                </div>
+                Meal
+              </label>
             </li>
             <li>
-              <div className="optionIcon" onClick={(e)=>handleChange(e)}>
-                <input type="radio" name="dishtype" id="dishtype-dessert" value="Dessert"  />
-                <img src="images/dessert.png" alt="dessert" />
-              </div>
-              <label htmlFor="dishtype-dessert">Dessert</label>
+              <input type="radio" name="dishtype" id="dishtype-dessert" value={"dessert"} onChange={handleChange} />
+              <label htmlFor="dishtype-dessert">
+                <div class="optionIcon">
+                  <img src="images/dessert.png" alt="dessert" />
+                </div>
+                Dessert
+              </label>
             </li>
             <li>
-              <div className="optionIcon" onClick={(e)=>handleChange(e)}>
-                <input type="radio" name="dishtype" id="dishtype-all"  value={""}  defaultChecked />
-                <img src="images/none.png" alt="all" />
-              </div>
-              <label htmlFor="dishtype-all">All</label>
+              <input type="radio" name="dishtype" id="dishtype-all"  value={"all"} onChange={handleChange} defaultChecked />
+              <label htmlFor="dishtype-all">
+                <div class="optionIcon">
+                  <img src="images/none.png" alt="all" />
+                </div>
+                All
+              </label>
             </li>
           </ul>
         </div>
