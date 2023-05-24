@@ -10,15 +10,14 @@ const FormList = (props) => {
     const dispatch = useDispatch();
     const [meal, setMeal] = useState({});
     useEffect(() => {
-        const random = dispatch(getFormMealAction(state.diet, state.dishtype, state.main));
-        random
-        .then(data => {
+        const response = dispatch(getFormMealAction(state.diet, state.dishtype));
+        response.then(data => {
             setMeal(data.meals[0]);
             setState(state => ({ ...state, meal: data.meals[0] }))
             }).catch(error => {
                 alert(error);
             }); // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [state.diet, state.dishtype, state.main])
+    }, [state.diet, state.dishtype])
     return (
         <>
             {

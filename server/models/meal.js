@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-
 const meal = new mongoose.Schema({
     idMeal: {
       type: Number,
@@ -160,7 +159,6 @@ const meal = new mongoose.Schema({
     },
     strSource: {
       type: String,
-      required: true
     },
     strImageSource: {
       type: String
