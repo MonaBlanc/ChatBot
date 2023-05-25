@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { loginAction } from '../../../container/actions';
 import BaseLogin from '../molecules/BaseLogin';
 import LoginForm from '../molecules/LoginForm';
-import { loginAction } from '../../../container/actions';
-import { useNavigate } from 'react-router-dom';
-
-import { useDispatch } from 'react-redux';
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -21,7 +20,6 @@ export default function Login() {
             email,
             password
         }
-        //const userCredential = { email: "dmin@outlook.com", password: "admin123" };
         const login = dispatch(loginAction(userCredentials));
         login
             .then(data => {
