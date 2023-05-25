@@ -8,7 +8,6 @@ const RandomList = (props) => {
     const dispatch = useDispatch();
     const { setState } = props;
     const [meal, setMeal] = useState({});
-    const [, setMascot] = useState({});
     useEffect(() => {
         const random = dispatch(randomMealAction());
         random
