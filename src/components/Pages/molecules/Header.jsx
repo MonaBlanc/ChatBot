@@ -1,6 +1,15 @@
 import { Link } from 'react-router-dom';
+import Logout from './Logout';
+import { useDispatch, useSelector } from 'react-redux';
+import { logoutAction } from '../../../container/actions';
 
 export default function Header() {
+    const dispatch = useDispatch();
+    const user = useSelector(state => state.isLoggedIn);
+    const logout = () => {
+        dispatch(logoutAction());
+    }
+    
     return (
         <header className="body-font font-black" style={{
             height: '12vh'
@@ -14,9 +23,8 @@ export default function Header() {
                     <img width="45" height="45" src="images/chat.png" alt="filled-chat"/>
                 </a>
                 <Link to="#" className="hover:text-gray-600">Help</Link>
-                <button className="inline-flex items-center bg-orange border-0 py-1 px-3 focus:outline-none hover:bg-lightOrange rounded text-white">
-                    User Account
-                </button>
+                <Link to="/login" className="inline-flex items-center bg-orange border-0 py-1 px-3 focus:outline-none hover:bg-lightOrange rounded text-white">Login</Link>
+                {user ? <Logout onLogout={logout}></Logout> : ""}
             </nav>
         </header >
     )

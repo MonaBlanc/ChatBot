@@ -1,42 +1,69 @@
 const axios = require('axios')
 const Meal = require('../models/meal');
-const mongoose = require('mongoose')
 
 // Controller for random meal
 exports.randomMeal = async (req, res) => {
-    axios.get(`https://www.themealdb.com/api/json/v1/1/random.php`)
-    .then(async (payload) => {
-        const mealData = payload.data.meals[0]
-        const existingMeal = await Meal.findOne({ idMeal: mealData.idMeal });
-        if (existingMeal) {
-            console.log('Meal already exists: ', existingMeal.strMeal);
-            res.json(mealData); 
-        } 
-        else {
-            const meal = new Meal({
-                ...mealData
-            });
-            const mealSaved = await meal.save();
-            console.log('New meal saved: ', mealSaved);
-            res.json(mealData); 
-        }
-    })
-    .catch((error) => {
-        console.log(error)
-        res.status(500).json({err: `Error while loading random meal : ${error.message}`});
-    })
-}
+    try {
+      const { data: { meals: [mealData] } } = await axios.get('https://www.themealdb.com/api/json/v1/1/random.php');
+  
+      const existingMeal = await Meal.findOne({ idMeal: mealData.idMeal });
+      if (existingMeal) {
+        console.log('Meal already exists:', existingMeal.strMeal);
+        res.json(existingMeal);
+      } else {
+        const meal = new Meal({
+          ...mealData,
+        });
+        const savedMeal = await meal.save();
+        console.log('New meal saved:', savedMeal.strMeal);
+        res.json(savedMeal);
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ err: `Error while loading random meal: ${error.message}` });
+    }
+  };
 
 // Controller for form meal
 exports.formMeal = async (req, res) => {
-    axios.get(`https://www.themealdb.com/api/json/v1/1/random.php/filter.php?c=${req.query.filter}`)
-    .then((payload) => {
-        const meal = payload.data.meals[0]
-        res.send(payload.data.meals[0])
-    })
-    .catch((error)=> 
-    res.status(500)
-    .json({err: `Error while loading specific meal : ${error.message}`}))
-}
+    const diet = req.query.diet;
+    const dishtype = req.query.dishtype;
+    console.log(dishtype);
+    try {
+      // Build the query object based on the parameters
+      const query = {};
+      if (diet) {
+        query.strCategory = diet;
+      }
+      else if (dishtype) {
+        query.strCategory = dishtype;
+      }
+      // Fetch the meals from the database
+      const data = await Meal.find(query).limit(10);
 
+    if(data !== []){
+        console.log(data.length);
+        res.json({meals: data});
+    }
+    else{
+        try {
+            const { data: { meals: [result] } } = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
+            const { data: { meals: [mealData] } } = await axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${result.idMeal}`);
+            const meal = new Meal({
+            ...mealData,
+            });
+            const savedMeal = await meal.save();
+            console.log('New meal saved:', savedMeal.strMeal);
+            res.json(savedMeal);
+          } catch (error) {
+            console.error(error);
+            res.status(500).json({ err: `Error while loading random meal: ${error.message}` });
+          }
+    }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal Server Error' });
+    }
+  };
+  
 

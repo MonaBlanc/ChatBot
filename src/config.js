@@ -20,8 +20,6 @@ const config = {
     meal: {},
     diet: "",
     dishtype: "",
-    main: "",
-    mascot: ""
   },
   widgets: [
     {
