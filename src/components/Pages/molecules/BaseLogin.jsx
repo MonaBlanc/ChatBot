@@ -1,4 +1,3 @@
-import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function BaseLogin() {
@@ -16,6 +15,7 @@ export default function BaseLogin() {
     return (
         <div className="col-sm-5 bg-img">
             <div className="info">
+            <img src={require('../../../assets/img/FoodIcon.png')} className="foodIcon" alt="FoodIcon"/>
                 <div className="btn-section">
                     <button onClick={login} className={location.pathname === "/login" ? defaultClass + active : defaultClass}>Login</button>
                     <button onClick={register} className={location.pathname === "/register" ? defaultClass + active : defaultClass}>Sign up</button>

@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { registerAction } from '../../../container/actions';
 import BaseLogin from '../molecules/BaseLogin';
 import RegisterForm from '../molecules/RegisterForm';
-import { registerAction } from '../../../container/actions';
-import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
     const navigate = useNavigate();
@@ -35,7 +35,6 @@ export default function Register() {
             password,
             passwordCheck
         }
-        // const userPayload = { username: "admin", email: "admin@outlook.com", password: "admin123", passwordCheck: "admin123" };
         const validate = dispatch(registerAction(newUser));
         validate.then(data => {
             navigate('/login');

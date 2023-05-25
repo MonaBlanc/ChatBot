@@ -27,9 +27,9 @@ export default function Header() {
                     <img className="w-32" src={require('../../../assets/img/logo.png')} alt="logo" />
                 </Link>
                 <Link to="/" className="hover:text-gray-600">Home</Link>
-                <Link to="/chefbot" className="text-orange hover:text-lightOrange">
+                <a href="/chefbot" className="text-orange hover:text-lightOrange">
                     <img width="45" height="45" src="images/chat.png" alt="filled-chat"/>
-                </Link>
+                </a>
                 <Link to="#" className="hover:text-gray-600">Help</Link>
                 
                 {isLogged ? 

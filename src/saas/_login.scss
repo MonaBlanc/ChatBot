@@ -23,7 +23,7 @@
 
     .default-bg{
         @extend .background;
-        color: #06283D;
+        color: #FFBF66;
     }
 
     .login-box{
@@ -31,7 +31,7 @@
         margin: 0 auto;
         box-shadow: 0 0 35px rgba(0,0,0,0.1);
         border-radius: 10px; 
-        background-color: #fff;
+        background-color: #fff5E4;
         display: flex;
         flex-direction: row;
 
@@ -39,12 +39,13 @@
             min-width: 300px; 
             padding: 0;
             border-radius: 10px 0 0 10px;
-            background: rgba(0,0,0,0.4) url('../assets/img/bg_img.jpeg') top left repeat;
+            background: linear-gradient(45deg, #ff77007a,#ff770075);
             background-size: cover;
             top:0;
             bottom: 0;
             opacity: 1;
         }
+
 
         .info{
             height: 450px;
@@ -60,7 +61,7 @@
             }
             >.btn-section{
                 position: absolute;
-                top: 40%;
+                bottom: 5%;
                 right: 0;
                 margin-bottom: 0;
                 display: flex;
@@ -68,14 +69,14 @@
 
                 .link-btn{
                     font-size: 12px;
-                    background-color: #06283D;
-                    color: #fff;
+                    background-color: #ff770077;
+                    color: #fff5E4;
                     @extend .font-bold;
                 }
 
                 .link-btn.active{
-                    background-color: #fff;
-                    color: #06283D;
+                    background-color: #fff5E4;
+                    color: #ff770077;
                 }
 
                 >.btn-primary{
@@ -107,7 +108,7 @@
             h3{
                 font-size: 25px;
                 @extend .font-bold;
-                color: #06283D;
+                color: #FFBF66;
             }
         }
         .login-inner-form, .register-inner-form{
@@ -133,41 +134,16 @@
                 .icon{
                     position: absolute;
                     right: 25px;
-                    top: 10px;
+                    top: 15px;
                 }
                 .icon2{
                     position: absolute;
                     right: 50px;
-                    top: 10px;
-                }
-                // importing icons
-                .icon.email::before{
-                    @extend .font-awesome;
-                    content: "\f0e0";
-                }
-                .icon.lock::before{
-                    @extend .font-awesome;
-                    @extend .font-bold;
-                    content: "\f023"
-                }
-                .icon.user::before{
-                    @extend .font-awesome;
-                    @extend .font-bold;
-                    content: "\f007"
-                }
-                .icon2.show::before{
-                    @extend .font-awesome;
-                    @extend .font-bold;
-                    content: "\f06e"
-                }
-                .icon2.hide::before{
-                    @extend .font-awesome;
-                    @extend .font-bold;
-                    content: "\f070"
+                    top: 15px;
                 }
             }
             .primary-btn{
-                background: #06283D;
+                background: #FFBF66;
                 @extend .width-100;
                 border: none;
                 color: #fff;
@@ -179,7 +155,7 @@
                 margin-top: 20px;
 
                 &:hover{
-                    background: #47B5FF;
+                    background: #ff7700cd;
                 }
             }
         }

@@ -1,12 +1,12 @@
-import React, { useCallback, useEffect } from 'react'
-import Header from '../molecules/Header'
-import Footer from '../molecules/Footer'
-import AnimatedBot from "../AnimatedBot/AnimatedBot"
+import { useCallback, useEffect } from 'react'
 import Chatbot from 'react-chatbot-kit'
-import ActionProvider from '../../../ActionProvider';
-import MessageParser from '../../../MessageParser';
-import config from '../../../config';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
+import ActionProvider from '../../../ActionProvider'
+import MessageParser from '../../../MessageParser'
+import config from '../../../config'
+import AnimatedBot from "../AnimatedBot/AnimatedBot"
+import Footer from '../molecules/Footer'
+import Header from '../molecules/Header'
 import "./Chefbot.css"
 
 export default function Chefbot() {
