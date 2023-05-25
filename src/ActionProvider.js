@@ -53,9 +53,15 @@ class ActionProvider {
         props: { id: id },
       }
     );
+    const userGreets = createClientMessage("Thank you!");
+    const goodbyeChat = this.createChatBotMessage("No problem! Come back anytime :)");  
+
     this.updateChatState(userMessage);
     this.updateChatbotState(message);
     this.updateChatbotState(groceryList);
+    this.updateChatbotState(userGreets);
+    this.updateChatbotState(goodbyeChat);
+
   };
 
 

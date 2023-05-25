@@ -21,18 +21,19 @@ const config = {
     diet: "",
     dishtype: "",
     main: "",
-    // mascot: ""
+    mascot: ""
   },
   widgets: [
     {
       widgetName: "OpeningOptions",
       widgetFunc: (props) => <OpeningOptions {...props} />,
-      // mapStateToProps: ["mascot"],
+      mapStateToProps: ["mascot"],
     },
     {
       widgetName: "menuListAPI",
       widgetFunc: (props) => <RandomList {...props} />,
-      mapStateToProps: ["meal"],
+      mapStateToProps: ["meal", "mascot"],
+      
     },
     {
       widgetName: "menuFormListAPI",

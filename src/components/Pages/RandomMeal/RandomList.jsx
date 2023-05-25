@@ -1,14 +1,14 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import "./RandomList.css";
+import { useEffect, useState } from "react";
 import { useDispatch } from 'react-redux';
 import { randomMealAction } from '../../../container/actions';
+import "./RandomList.css";
 
 
 const RandomList = (props) => {
     const dispatch = useDispatch();
     const { setState } = props;
     const [meal, setMeal] = useState({});
+    const [, setMascot] = useState({});
     useEffect(() => {
         const random = dispatch(randomMealAction());
         random

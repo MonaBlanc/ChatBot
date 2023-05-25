@@ -72,7 +72,7 @@
     margin-top: 0.8em;
     font-size: 0.8em;
     display: flex;
-    margin: 0 auto;
+    margin: 10px auto;
     border: 1px solid #FF7500;
 }
   
@@ -80,6 +80,6 @@
     transition: 0.5s;
     color: #fff;
     background: #FF7500;
-    margin: 0 auto;
+    margin: 10px auto;
 }
   

@@ -6,6 +6,7 @@ import Footer from '../molecules/Footer';
 import Header from '../molecules/Header';
 import Hero from '../molecules/Hero';
 import Slider from '../molecules/Slider';
+import './Home.css';
 
 export default function Home() {
     return (
@@ -85,7 +86,7 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <img src={require('../../../assets/img/happy-catto.png')} alt="bot" className="w-1/4 h-2/4 mx-auto mt-24" />
+                                <img src={require('../../../assets/img/happy.png')} alt="bot" id="bot"/>
                             </div>
                         </div>
                     </section>
