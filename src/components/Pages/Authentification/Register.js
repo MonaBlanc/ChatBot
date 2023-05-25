@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import BaseLogin from '../molecules/BaseLogin';
 import RegisterForm from '../molecules/RegisterForm';
@@ -6,6 +6,17 @@ import { registerAction } from '../../../container/actions';
 import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
+    const navigate = useNavigate();
+    const route = useCallback(() => {
+        const token = localStorage.getItem('x-access-token');
+        return token ? true : false;
+    }, []);
+    
+    useEffect(() => {
+        if (route()) {
+            navigate('/');
+        }
+    }, [route, navigate]);
     // hook variables
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -14,7 +25,6 @@ export default function Register() {
     const [errorMessage, setError] = useState("");
 
     const dispatch = useDispatch();
-    const navigate = useNavigate();
 
     // event handler on form submission 
     const handleSubmit = (event) => {
