@@ -1,13 +1,21 @@
 import { Link } from 'react-router-dom';
-import Logout from './Logout';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutAction } from '../../../container/actions';
+import { useCallback, useEffect, useState } from 'react';
 
 export default function Header() {
+    const [isLogged, setIsLogged] = useState(false);
+    const route = useCallback(() => {
+        const token = localStorage.getItem('x-access-token');
+        return token ? true : false;
+    }, []);
+    useEffect(() => {
+        setIsLogged(route);
+    }, [route]);
     const dispatch = useDispatch();
-    const user = useSelector(state => state.isLoggedIn);
     const logout = () => {
         dispatch(logoutAction());
+        setIsLogged(false);
     }
     
     return (
@@ -23,8 +31,10 @@ export default function Header() {
                     <img width="45" height="45" src="images/chat.png" alt="filled-chat"/>
                 </a>
                 <Link to="#" className="hover:text-gray-600">Help</Link>
-                <Link to="/login" className="inline-flex items-center bg-orange border-0 py-1 px-3 focus:outline-none hover:bg-lightOrange rounded text-white">Login</Link>
-                {user ? <Logout onLogout={logout}></Logout> : ""}
+                
+                {isLogged ? 
+                <Link onClick={logout} className="inline-flex items-center bg-orange border-0 py-1 px-3 focus:outline-none hover:bg-lightOrange rounded text-white">Logout</Link>
+                : <Link to="/login" className="inline-flex items-center bg-orange border-0 py-1 px-3 focus:outline-none hover:bg-lightOrange rounded text-white">Login</Link>}
             </nav>
         </header >
     )

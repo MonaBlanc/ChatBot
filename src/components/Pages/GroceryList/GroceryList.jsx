@@ -4,7 +4,6 @@ import extractIngredients from "./extractIngredients";
 const GroceryList = (props) => {
     const meal = props.meal;
     const ingredients = extractIngredients(meal);
-
     
     return (
         <>
