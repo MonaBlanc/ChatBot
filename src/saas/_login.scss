@@ -21,6 +21,15 @@
         }
     }
 
+    a #advice{
+        color: #FFBF66;
+        background: transparent;
+        &:hover{
+            text-decoration: none;
+        }
+
+    }
+
     .default-bg{
         @extend .background;
         color: #FFBF66;
@@ -104,12 +113,13 @@
         margin: auto;
         @extend .width-100;
         .title{
-            margin: 10px 0 50px 0;
+            margin: 10px 0 20px 0;
             h3{
                 font-size: 25px;
                 @extend .font-bold;
                 color: #FFBF66;
             }
+        
         }
         .login-inner-form, .register-inner-form{
             @extend .position-relative;
@@ -158,6 +168,17 @@
                     background: #ff7700cd;
                 }
             }
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .info{
+            display: none;
+        }
+        .form-group{
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+
         }
     }
 }
