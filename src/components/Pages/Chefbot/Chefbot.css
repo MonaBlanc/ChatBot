@@ -38,7 +38,6 @@
   font-weight: medium;
   position: relative;
   text-align: left;
-  min-width: 250px;
 }
 
 .react-chatbot-kit-user-chat-message-arrow {
@@ -151,13 +150,11 @@
 }
 
 .react-chatbot-kit-chat-inner-container {
-  height: 500px;
+  height: 65vh;
   /* From https://css.glass */
-  background: rgba(255, 255, 255, 0);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.39);
   
 }
@@ -187,12 +184,14 @@
 .layout-row{
   display: flex;
   padding-top: 2rem;
+  height: 80vh;
 }
 
 .react-chatbot-kit-chat-message-container {
   padding: 0 17.5px 10px 17.5px;
   overflow: auto;
-  height: 480px;
+  overflow-x: hidden;
+  height: 63vh;
   margin: auto;
   background-color: transparent;
 }
@@ -281,7 +280,7 @@
 
 @media screen and (max-width: 768px) {
   .react-chatbot-kit-chat-container {
-    width: 100%;
+    width: 80%;
   }
   .react-chatbot-kit-chat-input-container {
     width: 100%;
@@ -299,8 +298,8 @@
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
-  .react-chatbot-kit-chat-message-container {
-    height: 400px;
+  ::-webkit-scrollbar {
+    display: none;
   }
 }
   

@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import Logout from './Logout';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { logoutAction } from '../../../container/actions';
+import Logout from './Logout';
 export default function Header() {
   const dispatch = useDispatch();
   const user = useSelector(state => state.isLoggedIn);
@@ -10,7 +10,7 @@ export default function Header() {
   }
 
   return (
-    <header className="body-font font-black" style={{ height: '12vh' }}>
+    <header className="body-font font-black" style={{ height: '10vh' }}>
       <nav className="container flex items-center justify-between p-5 md:flex-row">
           <Link to="/" className="flex items-center text-gray-900">
             <img className="w-32" src={require('../../../assets/img/logo.png')} alt="logo" />

@@ -1,13 +1,13 @@
 import {
-    faCheckCircle,
-    faEnvelope,
-    faLock,
-    faTimesCircle
+  faCheckCircle,
+  faEnvelope,
+  faLock,
+  faTimesCircle
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import Error from "./Error";
 import { useLocation } from 'react-router-dom';
+import Error from "./Error";
 
 
 export default function LoginForm(props) {
@@ -76,7 +76,7 @@ export default function LoginForm(props) {
             ></Error>
           )}
           <div className="form-group">
-            <button className="btn primary-btn">Connection</button>
+            <button className="btn primary-btn">Connexion</button>
           </div>
         </form>
       </div>
