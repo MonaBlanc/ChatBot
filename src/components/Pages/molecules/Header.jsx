@@ -1,27 +1,35 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logoutAction } from '../../../container/actions';
 import Logout from './Logout';
+
 export default function Header() {
   const dispatch = useDispatch();
   const user = useSelector(state => state.isLoggedIn);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   const logout = () => {
     dispatch(logoutAction());
-  }
+  };
 
   return (
     <header className="body-font font-black" style={{ height: '10vh' }}>
       <nav className="container flex items-center justify-between p-5 md:flex-row">
-          <Link to="/" className="flex items-center text-gray-900">
-            <img className="w-32" src={require('../../../assets/img/logo.png')} alt="logo" />
-          </Link>
+        <Link to="/" className={`flex items-center text-gray-900 ${isMenuOpen ? 'hidden' : ''}`}>
+          <img className="w-32" src={require('../../../assets/img/logo.png')} alt="logo" />
+        </Link>
         <div className="max-w-screen-xl flex items-center justify-between p-4">
           <button
-            data-collapse-toggle="navbar-default"
+            onClick={toggleMenu}
             type="button"
             className="inline-flex items-center p-2 ml-3 text-sm text-orange-500 rounded-lg md:hidden hover:bg-orange-100 focus:outline-none focus:ring-2 focus:ring-orange-200 dark:text-orange-400 dark:hover:bg-orange-700 dark:focus:ring-orange-600"
             aria-controls="navbar-default"
-            aria-expanded="false"
+            aria-expanded={isMenuOpen}
           >
             <span className="sr-only">Open main menu</span>
             <svg
@@ -38,19 +46,40 @@ export default function Header() {
               ></path>
             </svg>
           </button>
-          <div className="hidden w-full md:flex md:w-auto justify-end" id="navbar-default">
-            <ul className="flex items-center space-x-4">
+          <div
+            className={`${
+              isMenuOpen ? 'block' : 'hidden'
+            } w-full md:flex md:w-auto justify-end`}
+            id="navbar-default"
+          >
+            <ul className={`flex items-center space-x-4 ${isMenuOpen ? 'justify-start' : ''}`}>
               <li>
-                <a href="/chefbot" className="text-orange hover:text-lightOrange align-middle justify-center">
-                  <img width="40" height="40" src="images/NewChat.png" alt="filled-chat" />
+                <a
+                  href="/chefbot"
+                  className="text-orange hover:text-lightOrange align-middle justify-center"
+                >
+                  <img
+                    width="40"
+                    height="40"
+                    src="images/NewChat.png"
+                    alt="filled-chat"
+                  />
                 </a>
               </li>
               <li>
-                <Link to="#" className="text-orange hover:text-lightOrange">
-                    <img width="45" height="45" src="images/Question.png" alt="filled-chat" /> 
+                <Link
+                  to="#"
+                  className="text-orange hover:text-lightOrange"
+                >
+                  <img
+                    width="45"
+                    height="45"
+                    src="images/Question.png"
+                    alt="filled-chat"
+                  />
                 </Link>
               </li>
-              {user ? <Logout onLogout={logout}></Logout> : null}
+              {user ? <Logout onLogout={logout} /> : null}
               <li>
                 <Link
                   to="/login"
