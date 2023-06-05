@@ -18,7 +18,7 @@ export default function Slider() {
         autoplay: true,
     });
     return (
-        <div id='slider' className='flex flex-row justify-evenly mt-8 mb-12'>
+        <div id='slider' className='flex flex-row justify-evenly mt-8 mb-12 overflow-hidden'>
             {Object.keys(images).map((key) =>
                 <img className='dish rounded-full h-32 w-32' src={images[key]} key={key} alt={key} />
             )}

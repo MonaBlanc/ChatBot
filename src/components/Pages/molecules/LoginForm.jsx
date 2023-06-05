@@ -1,17 +1,22 @@
 import {
-    faCheckCircle,
-    faEnvelope,
-    faLock,
-    faTimesCircle
+  faCheckCircle,
+  faEnvelope,
+  faLock,
+  faTimesCircle
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { useLocation } from 'react-router-dom';
 import Error from "./Error";
+
 
 export default function LoginForm(props) {
   let { handleSubmit, setEmail, setPassword, errorMessage, setError } =
     props.loginState;
   const [passwordShown, setPasswordShown] = useState(false);
+  const location = useLocation();
+  let defaultClass = "nav-link link-btn btn-primary text-gray-600 opacity-70 text-sm";
+  let active = " active"
 
   // Password toggle handler
   const togglePassword = () => {
@@ -24,6 +29,7 @@ export default function LoginForm(props) {
       <div className="title">
         <h3>Login</h3>
       </div>
+      <a href="/register" className={location.pathname === "/register" ? + active : defaultClass}>Are you a new member ? Sign up here.</a>
       <div className="login-inner-form">
         <form method="POST" onSubmit={handleSubmit}>
           <div className="form-group form-box">
@@ -70,7 +76,7 @@ export default function LoginForm(props) {
             ></Error>
           )}
           <div className="form-group">
-            <button className="btn primary-btn">Connection</button>
+            <button className="btn primary-btn">Connexion</button>
           </div>
         </form>
       </div>

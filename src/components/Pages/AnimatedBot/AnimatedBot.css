@@ -3,5 +3,16 @@
     width: 200px;
     height: 270px;
     top: 250px;
-    left: 100px;
+    left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .bot{
+        position: absolute;
+        width: 200px;
+        height: 270px;
+        top: 250px;
+        left: 10px;
+        display: none;
+    }
 }
