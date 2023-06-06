@@ -22,7 +22,7 @@ export default function Home() {
                     <section className="text-gray-600 body-font">
                         <div className="container px-5 py-24 mx-auto flex flex-wrap">
                             <div className="flex flex-wrap w-full">
-                                <div className="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
+                                <div className="lg:w-2/5  md:py-6">
                                     <div className="flex relative pb-12">
                                         <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
                                             <div className="h-full w-1 bg-gray-600 pointer-events-none"></div>
@@ -86,7 +86,9 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <img src={require('../../../assets/img/happy.png')} alt="bot" id="bot"/>
+                                <div class="botDiv">
+                                    <img src={require('../../../assets/img/happy.png')} alt="bot" id="bot" />
+                                </div>
                             </div>
                         </div>
                     </section>

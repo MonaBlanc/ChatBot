@@ -1,5 +1,30 @@
-#bot {
-    height: 75%;
+.botDiv{
+    overflow: hidden;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 45%;
+}
+
+#bot{
+    width: 100%;
+    height: auto;
     aspect-ratio: 3/4;
-    margin: 5% auto;
+    padding: 2em;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 1023px){
+    .botDiv{
+        width: 100%;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+    #bot{
+        padding: 2em 8em;
+    }
+
 }
