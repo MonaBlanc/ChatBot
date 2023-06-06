@@ -69,8 +69,8 @@ exports.formMeal = async (req, res) => {
 
 exports.setUserGroceryList = async (req, res) => {
   try {
-    const listItems = req.query.list;
-    const username = req.query.username;
+    const listItems = req.body.list;
+    const username = req.body.username;
 
     // Create a new grocery list document
     const groceryList = await GroceryList.create({
@@ -95,12 +95,10 @@ exports.getUserGroceryList = async (req, res) => {
       return res.status(404).json({ error: 'Grocery list not found.' });
     }
 
-    res.status(200).json(groceryList);
+    res.status(200).json(groceryList.items);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'An error occurred while retrieving the grocery list.' });
   }
 };
-
-  
 

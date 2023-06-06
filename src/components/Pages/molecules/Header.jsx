@@ -87,19 +87,37 @@ export default function Header() {
                   />
                 </Link>
               </li>
+              {isLogged ? 
               <li>
-                {isLogged ? 
+                <Link
+                  to="/user"
+                  className="text-orange hover:text-lightOrange"
+                >
+                  <img
+                    width="45"
+                    height="45"
+                    src="images/user.png"
+                    alt="user_icon"
+                  />
+                </Link>
+              </li> 
+              : <></> 
+            }
+            {isLogged ?
+              <li>
                 <Link onClick={logout} 
                 className="inline-flex items-center bg-orange border-0 py-1 px-3 focus:outline-none hover:bg-lightOrange rounded text-white">
                   Logout
                 </Link>
-                : 
+              </li>
+                :
+              <li>
                 <Link to="/login" 
                 className="inline-flex items-center bg-orange border-0 py-1 px-3 focus:outline-none hover:bg-lightOrange rounded text-white">
                   Login
                 </Link>
-                }
               </li>
+            }
             </ul>
           </div>
         </div>

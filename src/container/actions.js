@@ -98,3 +98,38 @@ export const logoutAction = () => (dispatch) => {
 
 }
 
+export const postGroceryListAction = (username, list) => (dispatch) => {
+    return MealsService.postGroceryList(username, list)
+        .then(data => {
+            dispatch({
+                type: actionType.POST_LIST_SUCCESS,
+                payload: data
+            })
+            return Promise.resolve(data);
+        })
+        .catch(error => {
+            dispatch({
+                type: actionType.POST_LIST_FAIL,
+                payload: { err: error.message || "Post grocery list failed." }
+            })
+            return Promise.reject(error)
+        });
+}
+
+export const getGroceryListAction = (username) => (dispatch) => {
+    return MealsService.getGroceryList(username)
+        .then(data => {
+            dispatch({
+                type: actionType.GET_LIST_SUCCESS,
+                payload: data
+            })
+            return Promise.resolve(data);
+        })
+        .catch(error => {
+            dispatch({
+                type: actionType.GET_LIST_FAIL,
+                payload: { err: error.message || "Get grocery list failed." }
+            })
+            return Promise.reject(error)
+        });
+}
