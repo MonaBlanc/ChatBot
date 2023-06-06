@@ -1,12 +1,19 @@
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useCallback, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logoutAction } from '../../../container/actions';
-import Logout from './Logout';
 
 export default function Header() {
+  const [isLogged, setIsLogged] = useState(false);
+  const route = useCallback(() => {
+      const token = localStorage.getItem('x-access-token');
+      return token ? true : false;
+  }, []);
+  useEffect(() => {
+      setIsLogged(route);
+  }, [route]);
+
   const dispatch = useDispatch();
-  const user = useSelector(state => state.isLoggedIn);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -15,6 +22,7 @@ export default function Header() {
 
   const logout = () => {
     dispatch(logoutAction());
+    setIsLogged(false);
   };
 
   return (
@@ -79,14 +87,18 @@ export default function Header() {
                   />
                 </Link>
               </li>
-              {user ? <Logout onLogout={logout} /> : null}
               <li>
-                <Link
-                  to="/login"
-                  className="inline-flex items-center bg-orange border-0 py-1 px-3 focus:outline-none hover:bg-lightOrange rounded text-white"
-                >
+                {isLogged ? 
+                <Link onClick={logout} 
+                className="inline-flex items-center bg-orange border-0 py-1 px-3 focus:outline-none hover:bg-lightOrange rounded text-white">
+                  Logout
+                </Link>
+                : 
+                <Link to="/login" 
+                className="inline-flex items-center bg-orange border-0 py-1 px-3 focus:outline-none hover:bg-lightOrange rounded text-white">
                   Login
                 </Link>
+                }
               </li>
             </ul>
           </div>
