@@ -1,26 +1,39 @@
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
+import store from '../../../container/store';
 import Footer from './Footer';
 import Header from './Header';
 import Hero from './Hero';
 
+
+function Wrapper({ children }) {
+    return (
+        <Provider store={store}>
+            <Router>
+                {children}
+            </Router>
+        </Provider>
+    );
+}
+
 describe('Header test', () => {
-    const header = render(<Provider><Router><Header /></Router></Provider>, { wrapper: Router });
-    it('should match the snapshot', () => {
-        expect(header.html()).toMatchSnapshot();
+    it('loads header and navbar', () => {
+        render(<Header />, { wrapper: Wrapper });
+        expect(screen.getByTestId('header')).toBeInTheDocument();
+        expect(screen.getByTestId('nav')).toBeInTheDocument();
     });
 });
 describe('Footer test', () => {
-    const footer = render(<Provider><Router><Footer /></Router></Provider>);
-    it('should match the snapshot', () => {
-        expect(footer.html()).toMatchSnapshot();
+    it('loads footer', () => {
+        render(<Footer />, { wrapper: Wrapper });
+        expect(screen.getByTestId('footer')).toBeInTheDocument();
     });
 });
 describe('Hero test', () => {
-    const hero = render(<Router><Hero /></Router>);
-    it('should match the snapshot', () => {
-        expect(hero.html()).toMatchSnapshot();
+    it('loads title', () => {
+        render(<Hero />, { wrapper: Wrapper });
+        expect(screen.getByTestId('title')).toBeInTheDocument();
     });
 });
