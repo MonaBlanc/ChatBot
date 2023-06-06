@@ -25,7 +25,6 @@ export const randomMealAction = () => (dispatch) => {
 }
 
 export const getFormMealAction = (diet, dishtype) => (dispatch) => {
-    console.log("Actions.js: ", diet, dishtype);
     // make sure dispatch is asynchronous
     // dispatch should be implemented in an action not into the component
     // use redux-thunk (in store.js) to do that
