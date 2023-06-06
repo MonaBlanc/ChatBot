@@ -12,7 +12,6 @@ const getRandomMeal = async () => {
 }
 
 const getFormMeal = async (diet, dishtype) => {
-    console.log("Meal service:", diet, dishtype);
     try {
         const response = await axios.get(`${baseURL}/formMeal`, { params: { diet, dishtype } });
         return await Promise.resolve(response);
