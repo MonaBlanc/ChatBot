@@ -5,7 +5,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import store from '../../../container/store';
 import Home from './Home';
 
+/* Testing the rendering of the components */
+
 it('Home test', () => {
     render(<Provider store={store}><Router><Home /></Router></Provider>);
     expect(screen.getByTestId('home')).toBeInTheDocument();
-});
+}); 
