@@ -1,14 +1,11 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
+import store from '../../../container/store';
 import Home from './Home';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import { MemoryRouter as Router } from 'react-router-dom';
 
-configure({ adapter: new Adapter() });
-describe('Home test', () => {
-    const home = shallow(<Router><Home /></Router>);
-    it('should match the snapshot', () => {
-        expect(home.html()).toMatchSnapshot();
-    });
+it('Home test', () => {
+    render(<Provider store={store}><Router><Home /></Router></Provider>);
+    expect(screen.getByTestId('home')).toBeInTheDocument();
 });

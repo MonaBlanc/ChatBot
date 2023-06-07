@@ -25,7 +25,7 @@ export default function LoginForm(props) {
     setPasswordShown(!passwordShown);
   };
   return (
-    <div className="col-sm-7 bg-color align-self-center form-section">
+    <div data-testid="login-form" className="col-sm-7 bg-color align-self-center form-section">
       <div className="title">
         <h3>Login</h3>
       </div>
