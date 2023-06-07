@@ -1,8 +1,9 @@
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import store from '../../../container/store';
+import BaseLogin from './BaseLogin';
 import Error from './Error';
 import Footer from './Footer';
 import Header from './Header';
@@ -59,4 +60,20 @@ describe('Slider test', () => {
       expect(screen.getByTestId('slider')).toBeInTheDocument();
       // Add more assertions as needed
     });
+  });
+
+/* Testing the integration of the components */
+
+test('Entering the login form', async () => {
+    render(
+      <Router>
+        <BaseLogin />
+      </Router>
+    );
+  
+    const loginButton = screen.getByText('Login');
+    fireEvent.click(loginButton);
+  
+    const loginForm = await waitFor(() => screen.getByTestId('base'));
+    expect(loginForm).toBeInTheDocument();
   });
