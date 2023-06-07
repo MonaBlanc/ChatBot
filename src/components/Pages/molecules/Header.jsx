@@ -29,7 +29,7 @@ export default function Header() {
     <header data-testid="header" className="body-font font-black" style={{ height: '10vh' }}>
       <nav data-testid="nav" className="container flex items-center justify-between p-5 md:flex-row">
         <Link to="/" className={`flex items-center text-gray-900 ${isMenuOpen ? 'hidden' : ''}`}>
-          <img className="w-32" src={require('../../../assets/img/logo.png')} alt="logo" />
+          <img className="w-40 pl-10" src={require('../../../assets/img/logo.png')} alt="logo" />
         </Link>
         <div className="max-w-screen-xl flex items-center justify-between p-4">
           <button
