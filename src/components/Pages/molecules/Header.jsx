@@ -26,8 +26,8 @@ export default function Header() {
   };
 
   return (
-    <header className="body-font font-black" style={{ height: '10vh' }}>
-      <nav className="container flex items-center justify-between p-5 md:flex-row">
+    <header data-testid="header" className="body-font font-black" style={{ height: '10vh' }}>
+      <nav data-testid="nav" className="container flex items-center justify-between p-5 md:flex-row">
         <Link to="/" className={`flex items-center text-gray-900 ${isMenuOpen ? 'hidden' : ''}`}>
           <img className="w-32" src={require('../../../assets/img/logo.png')} alt="logo" />
         </Link>

@@ -1,9 +1,8 @@
-import React from 'react'
 import { Link } from "react-router-dom";
 
 export default function Hero() {
     return (
-        <div className='container pt-20 flex flex-col text-6xl items-center justify-center mx-auto'>
+        <div data-testid="title" className='container pt-20 flex flex-col text-6xl items-center justify-center mx-auto'>
             <h1 className='p-2 text-center'>
                 WHICH
             </h1>
