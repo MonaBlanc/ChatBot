@@ -24,11 +24,11 @@ export const randomMealAction = () => (dispatch) => {
         })
 }
 
-export const getFormMealAction = (diet, dishtype) => (dispatch) => {
+export const getFormMealAction = (diet, dishtype, mainIngredient) => (dispatch) => {
     // make sure dispatch is asynchronous
     // dispatch should be implemented in an action not into the component
     // use redux-thunk (in store.js) to do that
-    return MealsService.getFormMeal(diet, dishtype)
+    return MealsService.getFormMeal(diet, dishtype, mainIngredient)
         .then(response => {
             dispatch({
                 type: actionType.GET_FORM_MEAL_SUCCESS,
@@ -39,7 +39,7 @@ export const getFormMealAction = (diet, dishtype) => (dispatch) => {
         .catch(error => {
             dispatch({
                 type: actionType.GET_FORM_MEAL_FAIL,
-                payload: { err: error.message || "Fetch random meal failed." }
+                payload: { err: error.message || "Fetch form meal failed." }
             })
             return Promise.reject(error);
         })

@@ -28,7 +28,7 @@ export default function Chefbot() {
             <div className="layout-row">
                 {/* This component will also take the message parser and other props to change  */}
                 <AnimatedBot config={config} />
-                <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} />
+                <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} disableScrollToBottom={true}/>
             </div>
             <Footer />
         </div>
