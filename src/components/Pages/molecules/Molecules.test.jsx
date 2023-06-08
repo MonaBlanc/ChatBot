@@ -1,29 +1,79 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import Header from './Header';
+import '@testing-library/jest-dom';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
+import store from '../../../container/store';
+import BaseLogin from './BaseLogin';
+import Error from './Error';
 import Footer from './Footer';
+import Header from './Header';
 import Hero from './Hero';
-import Slider from './Hero';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import { MemoryRouter as Router } from 'react-router-dom';
+import Slider from './Slider';
 
-configure({ adapter: new Adapter() });
+
+/* Testing the rendering of the components */
+
+function Wrapper({ children }) {
+    return (
+        <Provider store={store}>
+            <Router>
+                {children}
+            </Router>
+        </Provider>
+    );
+}
+
 describe('Header test', () => {
-    const header = shallow(<Router><Header /></Router>);
-    it('should match the snapshot', () => {
-        expect(header.html()).toMatchSnapshot();
+    it('loads header and navbar', () => {
+        render(<Header />, { wrapper: Wrapper });
+        expect(screen.getByTestId('header')).toBeInTheDocument();
+        expect(screen.getByTestId('nav')).toBeInTheDocument();
     });
 });
+
 describe('Footer test', () => {
-    const footer = shallow(<Router><Footer /></Router>);
-    it('should match the snapshot', () => {
-        expect(footer.html()).toMatchSnapshot();
+    it('loads footer', () => {
+        render(<Footer />, { wrapper: Wrapper });
+        expect(screen.getByTestId('footer')).toBeInTheDocument();
     });
 });
+
 describe('Hero test', () => {
-    const hero = shallow(<Router><Hero /></Router>);
-    it('should match the snapshot', () => {
-        expect(hero.html()).toMatchSnapshot();
+    it('loads title', () => {
+        render(<Hero />, { wrapper: Wrapper });
+        expect(screen.getByTestId('title')).toBeInTheDocument();
     });
 });
+
+
+describe('Error test', () => {
+    it('loads error page', () => {
+        render(<Error />, { wrapper: Wrapper });
+        expect(screen.getByTestId('error')).toBeInTheDocument();
+    });
+});
+
+describe('Slider test', () => {
+    it('loads slider', () => {
+      render(<Slider />, { wrapper: Wrapper });
+      // Test any specific behavior or elements related to the Slider component
+      expect(screen.getByTestId('slider')).toBeInTheDocument();
+      // Add more assertions as needed
+    });
+  });
+
+/* Testing the integration of the components */
+
+test('Entering the login form', async () => {
+    render(
+      <Router>
+        <BaseLogin />
+      </Router>
+    );
+  
+    const loginButton = screen.getByText('Login');
+    fireEvent.click(loginButton);
+  
+    const loginForm = await waitFor(() => screen.getByTestId('base'));
+    expect(loginForm).toBeInTheDocument();
+  });

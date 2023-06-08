@@ -1,11 +1,7 @@
-import React from "react";
-import mount from "enzyme";
+import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
-import { configure } from 'enzyme';
-import Adapter from "enzyme-adapter-react-16";
 import RandomList from "./RandomList";
 
-configure({ adapter: new Adapter() });
 describe("RandomMeal render", () => {
   let wrapper;
   let meal;

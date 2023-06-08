@@ -1,9 +1,9 @@
 import {
-    faCheckCircle,
-    faEnvelope,
-    faIdBadge,
-    faLock,
-    faTimesCircle,
+  faCheckCircle,
+  faEnvelope,
+  faIdBadge,
+  faLock,
+  faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
@@ -28,7 +28,7 @@ export default function RegisterForm(props) {
     setPasswordShown(!passwordShown);
   };
   return (
-    <div className="col-sm-7 bg-color align-self-center form-section">
+    <div data-testid="RegisterForm" className="col-sm-7 bg-color align-self-center form-section">
       <div className="title">
         <h3>Sign up</h3>
       </div>

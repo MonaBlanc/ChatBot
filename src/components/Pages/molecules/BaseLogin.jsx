@@ -11,7 +11,7 @@ export default function BaseLogin() {
     const login = () => navigate("/login")
 
     return (
-        <div className="info col-sm-5 bg-img">
+        <div data-testid="base" className="info col-sm-5 bg-img">
             <div className="info">
                 <img src={require('../../../assets/img/FoodIcon.png')} className="foodIcon " alt="FoodIcon" />
                 <div className="btn-section">
