@@ -9,7 +9,7 @@
 
 #bot{
     width: 100%;
-    height: auto;
+    height: 80%;
     aspect-ratio: 3/4;
     padding: 2em;
     object-fit: contain;

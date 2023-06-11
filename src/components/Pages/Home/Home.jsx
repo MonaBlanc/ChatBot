@@ -42,11 +42,11 @@ export default function Home() {
                                             <div className="h-full w-1 bg-gray-600 pointer-events-none"></div>
                                         </div>
                                         <div className="flex-shrink-0 w-10 h-10 rounded-full bg-orange inline-flex items-center justify-center text-white relative z-10">
-                                            < KitchenRoundedIcon />
+                                            <RestaurantMenuRoundedIcon />
                                         </div>
                                         <div className="flex-grow pl-4">
-                                            <h2 className="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Step 2: <span className="text-gray-700 text-md">Fill your fridge</span></h2>
-                                            <p className="leading-relaxed">With the help of Chefbot create a virtual copy of your real fridge!</p>
+                                            <h2 className="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Step 2: <span className="text-gray-700 text-md">Pick your meal</span></h2>
+                                            <p className="leading-relaxed">Today feels more like a salad day? Or you want something sweet? Chefbot will have the perfect recipe for you based on what you have in your fridge!</p>
                                         </div>
                                     </div>
                                     <div className="flex relative pb-12">
@@ -54,11 +54,11 @@ export default function Home() {
                                             <div className="h-full w-1 bg-gray-600 pointer-events-none"></div>
                                         </div>
                                         <div className="flex-shrink-0 w-10 h-10 rounded-full bg-orange inline-flex items-center justify-center text-white relative z-10">
-                                            <RestaurantMenuRoundedIcon />
+                                            < KitchenRoundedIcon />
                                         </div>
                                         <div className="flex-grow pl-4">
-                                            <h2 className="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Step 3: <span className="text-gray-700 text-md">Pick your meal</span></h2>
-                                            <p className="leading-relaxed">Today feels more like a salad day? Or you want something sweet? Chefbot will have the perfect recipe for you based on what you have in your fridge!</p>
+                                            <h2 className="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Step 3: <span className="text-gray-700 text-md">Fill your fridge</span></h2>
+                                            <p className="leading-relaxed">With the help of Chefbot create a virtual copy of your real fridge!</p>
                                         </div>
                                     </div>
                                     <div className="flex relative pb-12">
