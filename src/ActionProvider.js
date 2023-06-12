@@ -9,18 +9,6 @@ class ActionProvider {
     this.setState = setStateFunc;
   }
 
-  goToFridge = () => {
-    const userMessage = createClientMessage("Opening fridge...");
-    const message = this.createChatBotMessage(
-      "I am so sorry, i can't do that yet... Check our API for now!",
-      {
-        widget: "mealAPI",
-      }
-    );
-    this.updateChatState(userMessage);
-    this.updateChatbotState(message);
-  };
-
   getRandomMeal = () => {
     const userMessage = createClientMessage("Surprise me!");
     const message = this.createChatBotMessage("Okay.. Here is a random meal for you!",

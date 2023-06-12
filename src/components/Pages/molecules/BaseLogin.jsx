@@ -12,8 +12,8 @@ export default function BaseLogin() {
 
     return (
         <div data-testid="base" className="info col-sm-5 bg-img">
-            <div className="info">
-                <img src={require('../../../assets/img/FoodIcon.png')} className="foodIcon " alt="FoodIcon" />
+            <div className="info flex-direction">
+                <img src={require('../../../assets/img/FoodIcon.png')} className="foodIcon hide" alt="FoodIcon" />
                 <div className="btn-section">
                     <button onClick={login} className={location.pathname === "/login" ? defaultClass + active : defaultClass}>Login</button>
                     <button onClick={register} className={location.pathname === "/register" ? defaultClass + active : defaultClass}>Sign up</button>

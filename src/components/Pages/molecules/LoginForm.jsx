@@ -29,7 +29,6 @@ export default function LoginForm(props) {
       <div className="title">
         <h3>Login</h3>
       </div>
-      <a href="/register" className={location.pathname === "/register" ? + active : defaultClass}>Are you a new member ? Sign up here.</a>
       <div className="login-inner-form">
         <form method="POST" onSubmit={handleSubmit}>
           <div className="form-group form-box">
