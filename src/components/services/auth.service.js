@@ -22,6 +22,7 @@ const login = (userCredentials) => {
         .then(response => {
             if (response.data.token) {
                 localStorage.setItem("x-access-token", response.data.token);
+                localStorage.setItem("username", response.data.username)
             }
             return Promise.resolve(response.data);
         })

@@ -9,11 +9,11 @@ import spaghettiBolo from '../../../assets/img/spaghetti-bolo.jpeg';
 import spaghettiCarbo from '../../../assets/img/spaghetti-carbonara.jpeg';
 
 export default function Slider() {
-    function importAll(r) {
-        let images = {};
-        r.keys().map((item, index) => (images[item.replace('./', '')] = r(item)));
-        return images;
-    }
+    // function importAll(r) {
+    //     let images = {};
+    //     r.keys().map((item, index) => (images[item.replace('./', '')] = r(item)));
+    //     return images;
+    // }
     // const images = importAll(require.context('../../../assets/img/', false, /\.jpeg$/));
     const images = [chickenBasquaise, chomeur, onionSoup, hamEggs, penneArrabiata, spaghettiBolo, spaghettiCarbo ];
     anime({

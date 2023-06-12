@@ -86,7 +86,7 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="botDiv">
+                                <div className="botDiv">
                                     <img src={require('../../../assets/img/happy.png')} alt="bot" id="bot" />
                                 </div>
                             </div>

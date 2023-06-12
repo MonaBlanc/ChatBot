@@ -31,7 +31,6 @@ class ActionProvider {
     const validation = this.createChatBotMessage("Is this what you wanted?",
       {
         widget: "validation",
-
       }
     );
     this.updateChatState(userMessage);
@@ -76,12 +75,12 @@ class ActionProvider {
     this.updateChatbotState(message);
   };
 
-  getFormMeal = (diet, dishtype) => {
+  getFormMeal = (diet, dishtype, mainIngredient) => {
     const userMessage = createClientMessage("That's it!");
     const message = this.createChatBotMessage("Here is the perfect meal for you!",
       {
         widget: "menuFormListAPI",
-        props: { diet: diet, dishtype: dishtype},
+        props: { diet: diet, dishtype: dishtype, mainIngredient: mainIngredient},
       }
     );
     const validation = this.createChatBotMessage("Is this ok with you?",

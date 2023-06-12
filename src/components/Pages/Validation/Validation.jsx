@@ -10,7 +10,7 @@ const Validation = (props) => {
     },
     {
       text: "Not really...",
-      handler: props.actionProvider.getRandomMeal,
+      handler: props.actionProvider.getFormMeal,
       id: 2,
     },
     {

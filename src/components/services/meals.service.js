@@ -11,14 +11,34 @@ const getRandomMeal = async () => {
     }
 }
 
-const getFormMeal = async (diet, dishtype) => {
+const getFormMeal = async (diet, dishtype, mainIngredient) => {
     try {
-        const response = await axios.get(`${baseURL}/formMeal`, { params: { diet, dishtype } });
+        const response = await axios.get(`${baseURL}/formMeal`, { params: { diet, dishtype, mainIngredient } });
         return await Promise.resolve(response);
     } catch (error) {
         return await Promise.reject(error.response);
     }
 }
+
+const postGroceryList = async (username, list) => {
+    const body = {username, list}
+    try {
+        const response = await axios.post(`${baseURL}/grocery-list`, body);
+        return await Promise.resolve(response);
+    } catch (error) {
+        return await Promise.reject(error.response);
+    }
+}
+
+const getGroceryList = async (username) => {
+    try {
+        const response = await axios.get(`${baseURL}/grocery-list`, { params: { username } });
+        return await Promise.resolve(response);
+    } catch (error) {
+        return await Promise.reject(error.response);
+    }
+}
+
 export {
-    getRandomMeal, getFormMeal
+    getRandomMeal, getFormMeal, postGroceryList, getGroceryList
 }
