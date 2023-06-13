@@ -9,18 +9,6 @@ class ActionProvider {
     this.setState = setStateFunc;
   }
 
-  goToFridge = () => {
-    const userMessage = createClientMessage("Opening fridge...");
-    const message = this.createChatBotMessage(
-      "I am so sorry, i can't do that yet... Check our API for now!",
-      {
-        widget: "mealAPI",
-      }
-    );
-    this.updateChatState(userMessage);
-    this.updateChatbotState(message);
-  };
-
   getRandomMeal = () => {
     const userMessage = createClientMessage("Surprise me!");
     const message = this.createChatBotMessage("Okay.. Here is a random meal for you!",
@@ -31,7 +19,6 @@ class ActionProvider {
     const validation = this.createChatBotMessage("Is this what you wanted?",
       {
         widget: "validation",
-
       }
     );
     this.updateChatState(userMessage);
@@ -76,12 +63,12 @@ class ActionProvider {
     this.updateChatbotState(message);
   };
 
-  getFormMeal = (diet, dishtype) => {
+  getFormMeal = (diet, dishtype, mainIngredient) => {
     const userMessage = createClientMessage("That's it!");
     const message = this.createChatBotMessage("Here is the perfect meal for you!",
       {
         widget: "menuFormListAPI",
-        props: { diet: diet, dishtype: dishtype},
+        props: { diet: diet, dishtype: dishtype, mainIngredient: mainIngredient},
       }
     );
     const validation = this.createChatBotMessage("Is this ok with you?",

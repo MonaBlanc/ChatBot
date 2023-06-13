@@ -59,6 +59,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@cfaester/enzyme-adapter-react-18": "^0.7.0",
     "@testing-library/react": "^14.0.0",
     "axios": "^1.4.0",

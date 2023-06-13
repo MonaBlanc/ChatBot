@@ -68,7 +68,5 @@ export default function Slider() {
       <div className='fade'/>
     </div>
 
-    //   {[...images].map((image, index) => (
-    //   ))}
   );
 }

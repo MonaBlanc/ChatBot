@@ -59,6 +59,22 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
             };
+        case actionType.POST_LIST_SUCCESS:
+            return {
+                ...state,
+            };
+        case actionType.POST_LIST_FAIL:
+            return {
+                ...state,
+            };
+        case actionType.GET_LIST_SUCCESS:
+            return {
+                ...state,
+            };
+        case actionType.GET_LIST_FAIL:
+            return {
+                ...state,
+            };
         default:
             return state;
     }

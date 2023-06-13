@@ -20,6 +20,7 @@ const config = {
     meal: {},
     diet: "",
     dishtype: "",
+    mainIngredient: ""
   },
   widgets: [
     {

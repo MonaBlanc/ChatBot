@@ -4,11 +4,6 @@ import "./OpeningOptions.css"
 const OpeningOptions = (props) => {
   const options = [
     {
-      text: "Go to the fridge",
-      handler: props.actionProvider.goToFridge,
-      id: 1,
-    },
-    {
       text: "I have something in mind",
       handler: props.actionProvider.getInitForm,
       id: 2,
@@ -18,7 +13,6 @@ const OpeningOptions = (props) => {
       handler: props.actionProvider.getRandomMeal,
       id: 3,
     },
-    { text: "Quit", handler: () => { }, id: 4 },
   ];
 
   const optionsMarkup = options.map((option) => (

@@ -27,7 +27,7 @@ export default function Header() {
 
   return (
     <header data-testid="header" className="body-font font-black" style={{ height: '10vh' }}>
-      <nav data-testid="nav" className="container flex items-center justify-between p-5 md:flex-row">
+      <nav data-testid="nav" className="flex items-center justify-between w-full p-5 md:flex-row">
         <Link to="/" className={`flex items-center text-gray-900 ${isMenuOpen ? 'hidden' : ''}`}>
           <img className="w-40 pl-10" src={require('../../../assets/img/logo.png')} alt="logo" />
         </Link>
@@ -60,7 +60,7 @@ export default function Header() {
             } w-full md:flex md:w-auto justify-end`}
             id="navbar-default"
           >
-            <ul className={`flex items-center space-x-4 ${isMenuOpen ? 'justify-start' : ''}`}>
+            <ul className={`justify-between flex items-center space-x-4 ${isMenuOpen ? 'justify-start' : ''}`}>
               <li>
                 <a
                   href="/chefbot"
@@ -74,7 +74,7 @@ export default function Header() {
                   />
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="#"
                   className="text-orange hover:text-lightOrange"
@@ -86,20 +86,38 @@ export default function Header() {
                     alt="filled-chat"
                   />
                 </Link>
-              </li>
+              </li> */}
+              {isLogged ? 
               <li>
-                {isLogged ? 
+                <Link
+                  to="/user"
+                  className="text-orange hover:text-lightOrange"
+                >
+                  <img
+                    width="45"
+                    height="45"
+                    src="images/user.png"
+                    alt="user_icon"
+                  />
+                </Link>
+              </li> 
+              : <></> 
+            }
+            {isLogged ?
+              <li>
                 <Link onClick={logout} 
                 className="inline-flex items-center bg-orange border-0 py-1 px-3 focus:outline-none hover:bg-lightOrange rounded text-white">
                   Logout
                 </Link>
-                : 
+              </li>
+                :
+              <li>
                 <Link to="/login" 
                 className="inline-flex items-center bg-orange border-0 py-1 px-3 focus:outline-none hover:bg-lightOrange rounded text-white">
                   Login
                 </Link>
-                }
               </li>
+            }
             </ul>
           </div>
         </div>
