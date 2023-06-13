@@ -171,14 +171,70 @@
         }
     }
     @media screen and (max-width: 768px) {
-        .info{
+        .login-box{
+            display: flex;
+            flex-direction: column;
+    
+            .info{
+                @extend .position-relative;
+                height: 0px;
+                padding: 0;
+                margin: 0;
+                >.logo{
+                    text-align: left;
+                    margin: 20px;
+                    >.nav-brand{
+                        font-size: 22px;
+                        @extend .font-bold;
+                        color: #505050;
+                    }
+                }
+                >.btn-section{
+                    display: flex;
+                    flex-direction: row;
+                    top: -50px;
+                    position: relative;
+                    .link-btn{
+                        font-size: 12px;
+                        background-color: #ff770077;
+                        color: #fff5E4;
+                        @extend .font-bold;
+                    }
+    
+                    .link-btn.active{
+                        background-color: #fff5E4;
+                        color: #ff770077;
+                    }
+    
+                    >.btn-primary{
+                        @extend .text-center;
+                        position: relative;
+                        width: 50%;
+                        text-transform: uppercase;
+                        border-radius: 0;
+                        margin: 0;
+                        border: none;
+                        &:focus{
+                            outline: none;
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+        }
+        .hide{
             display: none;
         }
         .form-group{
             padding-bottom: 10px;
             padding-left: 10px;
             padding-right: 10px;
-
+        }
+        .login-inner-form{
+            padding-bottom: 20px;
+        }
+        .register-inner-form{
+            padding-bottom: 20px;
         }
     }
 }
