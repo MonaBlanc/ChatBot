@@ -1,35 +1,42 @@
-import AddIcon from "@mui/icons-material/Add";
-import KitchenRoundedIcon from "@mui/icons-material/KitchenRounded";
-import LocalGroceryStoreRoundedIcon from "@mui/icons-material/LocalGroceryStoreRounded";
-import RestaurantMenuRoundedIcon from "@mui/icons-material/RestaurantMenuRounded";
-import { useEffect, useRef } from "react";
-import Footer from "../molecules/Footer";
-import Header from "../molecules/Header";
-import Hero from "../molecules/Hero";
-import Slider from "../molecules/Slider";
-import "./Home.css";
+import React, { useEffect, useRef } from 'react';
+import AddIcon from '@mui/icons-material/Add';
+import KitchenRoundedIcon from '@mui/icons-material/KitchenRounded';
+import LocalGroceryStoreRoundedIcon from '@mui/icons-material/LocalGroceryStoreRounded';
+import RestaurantMenuRoundedIcon from '@mui/icons-material/RestaurantMenuRounded';
+import Footer from '../molecules/Footer';
+import Header from '../molecules/Header';
+import Hero from '../molecules/Hero';
+import Slider from '../molecules/Slider';
+import './Home.css';
 
 export default function Home() {
-  const sectionRef = useRef(null);
+  const targets = useRef([]);
+  const observerRef = useRef(null); // Store the IntersectionObserver instance
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const observer = (observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in");
+            entry.target.classList.add('fade-in');
           } else {
-            entry.target.classList.remove("fade-in");
+            entry.target.classList.remove('fade-in');
           }
         });
       },
       { threshold: 0.5 }
-    );
+    ));
 
-    observer.observe(sectionRef.current);
+    const observedTargets = targets.current.filter((target) => target instanceof Element);
+
+    observedTargets.forEach((target) => {
+      observer.observe(target);
+    });
 
     return () => {
-      observer.unobserve(sectionRef.current);
+      observedTargets.forEach((target) => {
+        observer.unobserve(target); // Unobserve the element when the component unmounts
+      });
     };
   }, []);
 
@@ -39,20 +46,24 @@ export default function Home() {
       <main id="site-main">
         <Hero />
         <Slider />
-        <section id="presentation" className="text-center" ref={sectionRef}>
-          <h2 className="text-3xl text-orange mb-4 fade-in">
+        <section id="presentation-container" className="text-center" ref={(el) => { targets.current[0] = el; }}>
+          <h2 id="sectionTitle" ref={(el) => targets.current.push(el)}>
             ChefBot, your new Sous-chef!
           </h2>
-          <p>
-            ChefBot is an intelligent chatbot that will help you find the
-            perfect meal for you!
+          <p id="sectionTitle" ref={(el) => targets.current.push(el)}>
+          ChefBot, your new Sous-chef! </p>
+          <p id="subtitle" ref={(el) => targets.current.push(el)}>
+            ChefBot is an intelligent chatbot that will help you find the perfect meal for you!
           </p>
-          <p>Scroll below to see some of Chefbot's cool features.</p>
+          <p id="subtitleBis" ref={(el) => targets.current.push(el)}>
+            Scroll below to see some of Chefbot's cool features.
+          </p>
           <section className="text-gray-600 body-font">
-            <div className="container px-5 py-24 mx-auto flex flex-wrap">
+            <div className="container pt-5 py-24 mx-auto flex flex-wrap">
               <div className="flex flex-wrap w-full">
                 <div className="lg:w-2/5  md:py-6">
-                  <div className="flex relative pb-12">
+                  <div className="flex relative pb-12" id="step1" ref={(el) => el && targets.current.push(el)}>
+                    
                     <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
                       <div className="h-full w-1 bg-gray-600 pointer-events-none"></div>
                     </div>
@@ -81,7 +92,7 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex relative pb-12">
+                  <div className="flex relative pb-12" id="step2" ref={(el) => el && targets.current.push(el)}>
                     <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
                       <div className="h-full w-1 bg-gray-600 pointer-events-none"></div>
                     </div>
@@ -102,7 +113,7 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex relative pb-12">
+                  <div className="flex relative pb-12" id="step3" ref={(el) => el && targets.current.push(el)}>
                     <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
                       <div className="h-full w-1 bg-gray-600 pointer-events-none"></div>
                     </div>
@@ -122,7 +133,7 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex relative pb-12">
+                  <div className="flex relative pb-12" id="step4" ref={(el) => el && targets.current.push(el)}>
                     <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
                       <div className="h-full w-1 bg-gray-600 pointer-events-none"></div>
                     </div>
@@ -143,7 +154,7 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex relative">
+                  <div className="flex relative" id="step5" ref={(el) => el && targets.current.push(el)}>
                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-orange inline-flex items-center justify-center text-white relative z-10">
                       <svg
                         fill="none"
@@ -173,11 +184,12 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div class="botDiv">
+                <div className="botDiv">
                   <img
                     src={require("../../../assets/img/happy.png")}
                     alt="bot"
                     id="bot"
+                    ref={(el) => el && targets.current.push(el)}
                   />
                 </div>
               </div>
