@@ -4,9 +4,6 @@
 [build.environment]
   NODE_VERSION = "18"  # Set the desired Node.js version
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"  # If you're using Next.js, you can add this plugin for improved integration
-
 [[redirects]]
   from = "/api/*"  # Redirect API requests to the server
   to = "/server/:splat"  # Map the requests to the server subfolder
