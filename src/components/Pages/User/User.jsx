@@ -20,6 +20,7 @@ export default function User() {
         }
     }, [route, navigate]);
     const [list, setList] = useState([])
+    const [isListAvailable, setIsListAvailable] = useState(true);
     const dispatch = useDispatch();
     useEffect(() => {
         const username = localStorage.getItem('username');
@@ -29,12 +30,11 @@ export default function User() {
                 console.log(list.data)
                 setList(list.data);
             }).catch(error => {
-                alert(error);
+                setIsListAvailable(false)
             }); // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     const checkedIngredients = list;
     const changeList = (e) => {
-        console.log("Before: ", checkedIngredients);
         let index;
         if (!e.target.checked){
             console.log(e.target.id);
@@ -47,17 +47,16 @@ export default function User() {
             if (index === -1)
                 checkedIngredients.push(e.target.id)
         }
-        console.log("After: ", checkedIngredients)
     }
     
     
     return (
-        <div id="bg">
+        <div id="bg relative min-h-screen">
             <Header />
             <main id="site-main" className="mt-16 h-full m-auto">
             {
-            list ? 
-                <div className="grocery-list row columns five m-auto">
+            isListAvailable ? 
+                <div className="grocery-list row columns five" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '50%', margin: 'auto' }}>
                     <h5>Ingredients:</h5>
                     {list.map(ingredient => 
                         <div key={ingredient} className="checkList">
@@ -69,18 +68,20 @@ export default function User() {
                     )}
                 </div>
                 :
-                <h3 className="bg-lightOrange text-white p-4 rounded-md text-center w-2/3 mx-auto">
-                    <span>Your grocery list has been updated! Check your </span>
+                <h3 className="bg-lightOrange text-white p-8 rounded-md text-center w-1/4 mx-auto">
+                    <span>You don't have a grocery list yet! Go talk with </span>
                     <span className="underline text-yellow-200">
-                        <Link to="/user">
-                            personal space
+                        <Link to="/chefbot">
+                        Chefbot
                         </Link>
                     </span> 
-                    <span> to know what groceries you need!</span>
+                    <span> to know what yummy recipe you'll eat next! </span>
                 </h3>
             }
             </main>
-            <Footer />
+            <div className="absolute bottom-0 w-full h-9vh">
+                <Footer />
+            </div>
         </div>
     );
 };

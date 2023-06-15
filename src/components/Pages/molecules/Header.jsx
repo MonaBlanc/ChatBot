@@ -60,7 +60,7 @@ export default function Header() {
             } w-full md:flex md:w-auto justify-end`}
             id="navbar-default"
           >
-            <ul className={`justify-between flex items-center space-x-4 ${isMenuOpen ? 'justify-start' : ''}`}>
+            <ul className={`justify-between flex items-center space-x-4 ${isMenuOpen ? 'justify-end' : ''}`}>
               <li>
                 <a
                   href="/chefbot"
@@ -74,19 +74,6 @@ export default function Header() {
                   />
                 </a>
               </li>
-              {/* <li>
-                <Link
-                  to="#"
-                  className="text-orange hover:text-lightOrange"
-                >
-                  <img
-                    width="45"
-                    height="45"
-                    src="images/Question.png"
-                    alt="filled-chat"
-                  />
-                </Link>
-              </li> */}
               {isLogged ? 
               <li>
                 <Link
