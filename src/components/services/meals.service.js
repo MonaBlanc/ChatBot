@@ -20,8 +20,8 @@ const getFormMeal = async (diet, dishtype, mainIngredient) => {
     }
 }
 
-const postGroceryList = async (username, list) => {
-    const body = {username, list}
+const postGroceryList = async (username, mealId, list) => {
+    const body = {username, mealId, list}
     try {
         const response = await axios.post(`${baseURL}/grocery-list`, body);
         return await Promise.resolve(response);

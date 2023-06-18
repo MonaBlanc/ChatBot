@@ -98,8 +98,8 @@ export const logoutAction = () => (dispatch) => {
 
 }
 
-export const postGroceryListAction = (username, list) => (dispatch) => {
-    return MealsService.postGroceryList(username, list)
+export const postGroceryListAction = (username, mealId, list) => (dispatch) => {
+    return MealsService.postGroceryList(username, mealId, list)
         .then(data => {
             dispatch({
                 type: actionType.POST_LIST_SUCCESS,
@@ -118,12 +118,12 @@ export const postGroceryListAction = (username, list) => (dispatch) => {
 
 export const getGroceryListAction = (username) => (dispatch) => {
     return MealsService.getGroceryList(username)
-        .then(data => {
+        .then(res => {
             dispatch({
                 type: actionType.GET_LIST_SUCCESS,
-                payload: data
+                payload: res.data
             })
-            return Promise.resolve(data);
+            return Promise.resolve(res.data);
         })
         .catch(error => {
             dispatch({

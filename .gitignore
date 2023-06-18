@@ -27,3 +27,5 @@ yarn-error.log*
 todos.txt
 
 server/.env
+# Local Netlify folder
+.netlify

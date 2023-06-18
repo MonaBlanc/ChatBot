@@ -87,9 +87,8 @@ exports.setUserGroceryList = async (req, res) => {
   try {
     const listItems = req.body.list;
     const username = req.body.username;
-
+    const mealId = req.body.mealId;
     const existingList = await GroceryList.findOneAndDelete({username})
-    console.log(existingList);
     if(existingList)
       console.log("Old list deleted successfully!");
     else
@@ -98,9 +97,9 @@ exports.setUserGroceryList = async (req, res) => {
     // Create a new grocery list document
     const groceryList = await GroceryList.create({
       username,
+      mealId,
       items: listItems
     });
-
     res.status(201).json(groceryList);
   } catch (error) {
     console.error(error);
@@ -113,12 +112,11 @@ exports.getUserGroceryList = async (req, res) => {
     const username = req.query.username;
     // Find the grocery list based on the username
     const groceryList = await GroceryList.findOne({ username });
-
     if (!groceryList) {
       return res.status(404).json({ error: 'Grocery list not found.' });
     }
-
-    res.status(200).json(groceryList.items);
+    const mealInfo = await Meal.findOne({ idMeal: groceryList.mealId });
+    res.status(200).json({list : groceryList.items, mealInfo });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'An error occurred while retrieving the grocery list.' });

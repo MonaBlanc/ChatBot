@@ -31,7 +31,7 @@ const GroceryList = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const username = localStorage.getItem('username');
-        dispatch(postGroceryListAction(username, checkedIngredients));
+        dispatch(postGroceryListAction(username, meal.idMeal, checkedIngredients));
         setIsListSubmitted(true);
 
     }

@@ -4,6 +4,7 @@ import Header from "../molecules/Header";
 import { useCallback, useEffect, useState } from "react";
 import { getGroceryListAction } from "../../../container/actions";
 import { Link, useNavigate } from "react-router-dom";
+import "./user.css"
 
 
 export default function User() {
@@ -20,16 +21,19 @@ export default function User() {
         }
     }, [route, navigate]);
     const [list, setList] = useState([])
+    const [meal, setMeal] = useState([])
     const [isListAvailable, setIsListAvailable] = useState(true);
     const dispatch = useDispatch();
     useEffect(() => {
         const username = localStorage.getItem('username');
         const res = dispatch(getGroceryListAction(username));
         res
-            .then(list => {
-                console.log(list.data)
-                setList(list.data);
+            .then(data => {
+                console.log(data)
+                setList(data.list);
+                setMeal(data.mealInfo);
             }).catch(error => {
+                console.log(error);
                 setIsListAvailable(false)
             }); // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
@@ -53,19 +57,35 @@ export default function User() {
     return (
         <div id="bg relative min-h-screen">
             <Header />
-            <main id="site-main" className="mt-16 h-full m-auto">
+            <main id="site-main" className="mt-16 h-full m-auto flex justify-center">
             {
             isListAvailable ? 
-                <div className="grocery-list row columns five" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '50%', margin: 'auto' }}>
-                    <h5>Ingredients:</h5>
-                    {list.map(ingredient => 
-                        <div key={ingredient} className="checkList">
-                            <input id={ingredient} type="checkbox" defaultChecked onChange={(e) => changeList(e, ingredient)}/>                                    
-                            <label className="toBuy-label" htmlFor={ingredient}>
-                            {ingredient}
-                            </label>
+                <div className="meal-info">
+                    <div className="w-2/3">
+                        <img className="thumb" alt="meal-thumb" src={meal.strMealThumb} />
+                        <div className="recipe-title">
+                            <h3 className="text-lightOrange text-xl">{meal.strMeal}</h3>
                         </div>
-                    )}
+                        <div className="">
+                            {meal.strCategory ? <p><strong className="text-lightOrange">Category:</strong> {meal.strCategory}</p> : ''}
+                            {meal.strArea ? <p><strong className="text-lightOrange">Area:</strong> {meal.strArea}</p> : ''}
+                            {meal.strTags ? <p><strong className="text-lightOrange">Tags:</strong> {meal.strTags.split(',').join(', ')}</p> : ''}
+                        </div>
+                        <div className="">
+                            <p><span className="text-lightOrange">Cooking guide: </span>{meal.strInstructions}</p>
+                        </div>
+                    </div>
+                    <div className="grocery-list row columns five md:ml-8">
+                        <h5>Grocery List:</h5>
+                        {list.map(ingredient => 
+                            <div key={ingredient} className="checkList">
+                                <input id={ingredient} type="checkbox" defaultChecked onChange={(e) => changeList(e, ingredient)}/>                                    
+                                <label className="toBuy-label" htmlFor={ingredient}>
+                                {ingredient}
+                                </label>
+                            </div>
+                        )}
+                    </div>
                 </div>
                 :
                 <h3 className="bg-lightOrange text-white p-8 rounded-md text-center w-1/4 mx-auto">
@@ -79,7 +99,7 @@ export default function User() {
                 </h3>
             }
             </main>
-            <div className="absolute bottom-0 w-full h-9vh">
+            <div className="">
                 <Footer />
             </div>
         </div>
