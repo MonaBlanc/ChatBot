@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import AddIcon from '@mui/icons-material/Add';
-import KitchenRoundedIcon from '@mui/icons-material/KitchenRounded';
-import LocalGroceryStoreRoundedIcon from '@mui/icons-material/LocalGroceryStoreRounded';
+import ShuffleIcon from '@mui/icons-material/Shuffle';import LocalGroceryStoreRoundedIcon from '@mui/icons-material/LocalGroceryStoreRounded';
 import RestaurantMenuRoundedIcon from '@mui/icons-material/RestaurantMenuRounded';
 import Footer from '../molecules/Footer';
 import Header from '../molecules/Header';
@@ -109,7 +108,7 @@ export default function Home() {
                       <p className="leading-relaxed">
                         Today feels more like a salad day? Or you want something
                         sweet? Chefbot will have the perfect recipe for you
-                        based on what you have in your fridge!
+                        based on your diet, or on what you want to eat!
                       </p>
                     </div>
                   </div>
@@ -118,18 +117,17 @@ export default function Home() {
                       <div className="h-full w-1 bg-gray-600 pointer-events-none"></div>
                     </div>
                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-orange inline-flex items-center justify-center text-white relative z-10">
-                      <KitchenRoundedIcon />
+                      <ShuffleIcon />
                     </div>
                     <div className="flex-grow pl-4">
                       <h2 className="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">
                         Step 3:{" "}
                         <span className="text-gray-700 text-md">
-                          Fill your fridge
+                          Try new things!
                         </span>
                       </h2>
                       <p className="leading-relaxed">
-                        With the help of Chefbot create a virtual copy of your
-                        real fridge!
+                        Chefbot can suggest a random recipe for when you're hungry but don't know what to eat!
                       </p>
                     </div>
                   </div>
@@ -144,13 +142,11 @@ export default function Home() {
                       <h2 className="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">
                         Step 4:{" "}
                         <span className="text-gray-700 text-md">
-                          Try new things!
+                          Get your grocery list
                         </span>
                       </h2>
                       <p className="leading-relaxed">
-                        If you're down to go do some groceries, Chefbot will
-                        help you make a list of what you need to try a new meal
-                        of your taste!
+                        With the help of Chefbot create a grocery list for the ingredients you need to cook your next meal!
                       </p>
                     </div>
                   </div>

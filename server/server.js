@@ -3,7 +3,7 @@ const connectDB = require('./database/connection');
 const cors = require('cors');
 
 require('dotenv').config({ path: "./.env" });
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.SERVER_PORT || 4000;
 // create express instance
 const app = express();
 app.use(express.json());
