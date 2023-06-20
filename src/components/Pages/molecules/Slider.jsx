@@ -57,7 +57,7 @@ export default function Slider() {
   }, []);
 
   return (
-    <div className='tag-list flex flex-row justify-evenly mt-8 mb-12 overflow-hidden' id='slider'>
+    <div data-testid="slider" className='tag-list flex flex-row justify-evenly mt-8 mb-12 overflow-hidden' id='slider'>
       {[...new Array(ROWS)].map((_, i) => (
         <InfiniteLoopSlider key={i} duration={random(DURATION - 5000, DURATION + 5000)} reverse={i % 2}>
           {shuffle(IMAGES).slice(0, IMAGES_PER_ROW).map(tag => (
