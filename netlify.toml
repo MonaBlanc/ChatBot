@@ -4,11 +4,3 @@
 [build.environment]
   NODE_VERSION = "18"  # Set the desired Node.js version
 
-[[redirects]]
-  from = "/api/*"  # Redirect API requests to the server
-  to = "/server/:splat"  # Map the requests to the server subfolder
-
-[[redirects]]
-  from = "/*"  # Redirect all other requests to your React app's static files
-  to = "/src/index.js"  # Assuming your React app's entry file is index.html
-  status = 200  # Set the status code to 200 for client-side routing
