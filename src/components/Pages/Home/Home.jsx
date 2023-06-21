@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from 'react';
 import AddIcon from '@mui/icons-material/Add';
-import ShuffleIcon from '@mui/icons-material/Shuffle';import LocalGroceryStoreRoundedIcon from '@mui/icons-material/LocalGroceryStoreRounded';
+import LocalGroceryStoreRoundedIcon from '@mui/icons-material/LocalGroceryStoreRounded';
 import RestaurantMenuRoundedIcon from '@mui/icons-material/RestaurantMenuRounded';
+import ShuffleIcon from '@mui/icons-material/Shuffle';
+import { useEffect, useRef } from 'react';
 import Footer from '../molecules/Footer';
 import Header from '../molecules/Header';
 import Hero from '../molecules/Hero';
@@ -58,7 +59,7 @@ export default function Home() {
             Scroll below to see some of Chefbot's cool features.
           </p>
           <section className="text-gray-600 body-font">
-            <div className="container pt-5 py-24 mx-auto flex flex-wrap">
+            <div className="container pt-5 pl-5 py-24 mx-auto flex flex-wrap">
               <div className="flex flex-wrap w-full">
                 <div className="lg:w-2/5  md:py-6">
                   <div className="flex relative pb-12" id="step1" ref={(el) => el && targets.current.push(el)}>
